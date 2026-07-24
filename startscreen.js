@@ -128,7 +128,7 @@ function screen3(){
     text("One night, without warning, the player's star suddenly begins to fade away, no illness, no wound, no explanation.\n"+
         "There is a person who the player dreaming tell the player you only have 1 day left before your star disappear forever.",
     30,100,width-60)
-    text("The secret--the player isn't an ordinary person,"+ character_name+ "is the Last star keeper who is the only person capable to restoring hope.\n"+
+    text("The secret--the player isn't an ordinary person, "+ character_name+ " is the Last star keeper who is the only person capable to restoring hope.\n"+
         "Nowadays, when humanity becomes greedy and hopeless, it only cares about materialism; the light has shattered into countless gems.",
     30,250,width-60)
     text("The Darkness: The Darkness is a villain who was the first Star Keeper.\n"+
