@@ -9,5 +9,7 @@ html,body{
     overflow:hidden;
 }
 canvas{
-    display:block
+    display:block;
+    border:3px solid #ffffff;
+    box-sizing:border-box;
 }
