@@ -1,7 +1,7 @@
 //Screen 8 chapter 2, dark
 function chapter2() {
     image(ch2,0,0,width,height);
-    fill(0);
+    fill(255);
     textAlign(LEFT);
     textSize(17);
     textFont("Arial");
