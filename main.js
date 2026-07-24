@@ -18,8 +18,10 @@ let IntroShown=false;
 let prefaceButton;
 let prefaceShown =false;
 
-
 //screen 4
+
+
+//let ch1
 //let choosebutton3, choosebutton4;
 
 //Screen 5, define within the program
@@ -43,6 +45,8 @@ function preload() {
     charImg2=loadImage("assets/maya.png");
     startBg=loadImage("assets/start.jpg")
     mini1=loadImage("assets/mini1.jpg");
+    ch1=loadImage("assets/ch1.jpg");
+    cave=loadImage("assets/cave.jpg");
     //rottenFoodImage={
         //apple:loadImage("assets/apple.png"),//
         //avocado:loadImage("assets/avocado.png"),//
