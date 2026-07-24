@@ -54,11 +54,12 @@ const obstacleDefs = [
 function mazegame() {
     image(mini1,0,0,width,height);//food background,
     fill(0);
-    textAlign(LEFT);
+    textAlign(CENTER);
     textSize(26);
     text("Survival Maze", width / 2, 100);
 
     textSize(16);
+    textAlign(LEFT);
     text(
     "Use the arrow keys or swipe to guide your character through the cave.\n" +
     "Collect 3 food which is safe to eat during journey while avoiding rotten, opened food.\n" +
