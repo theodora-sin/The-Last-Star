@@ -12,7 +12,8 @@ const goodFoodList = Object.values(GoodFoodEmoji);
 
 //walls 
 const wallDefs = [
-    [300, 100, 500, 8],
+    [165, 100, 230, 8],
+    [455, 100, 190, 8],
     [550, 300, 8, 400],
     [350, 500, 300, 8],
     [150, 500, 200, 8],
@@ -53,9 +54,9 @@ const obstacleDefs = [
 function mazegame() {
     image(mini1,0,0,width,height);//food background,
     fill(0);
-    textAlign(CENTER);
+    textAlign(LEFT);
     textSize(26);
-    text("Maze", width / 2, 100);
+    text("Survival Maze", width / 2, 100);
 
     textSize(16);
     text(
@@ -249,16 +250,16 @@ function drawMazeEndScreen() {
     if (mazeWon) {
         textSize(22);
         text("You made it! You collected 3 good items." 
-            , width / 2, height / 2 - 40, width - 60);
+            , 30, height / 2 - 40, width - 60);
     } else {
         textSize(22);
         text("That food wasn't save to eat."
-            , width / 2, height / 2 - 40, width - 60);
+            ,30, height / 2 - 40, width - 60);
     }
     pop();
 
     if (!continueButton4) {
-        continueButton4= createSprite(width / 2, height / 2 + 100, 140, 48);
+        continueButton4= new Sprite(width / 2, height / 2 + 100, 140, 48);
         continueButton4.text = "Continue";
         continueButton4.color = mazeWon ? "green" : "blue";
         continueButton4.textColor = "white";
