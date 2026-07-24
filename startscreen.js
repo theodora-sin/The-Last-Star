@@ -5,7 +5,7 @@ function startscreen(){
     textAlign(CENTER);
     textSize(20);
     textFont("DMSerifDisplay");
-    text("Click the start button below to start the game!", width/2, height/2 +70,width-60);
+    text("Click the start button below to start the game!", 30, height/2 + 70, width - 60);
 
     //Create the start button:
     if (!startButton){
@@ -80,15 +80,16 @@ function gotoPreface(){
 
 function screen2(){
     image(startBg,0,0,width, height)
-    fill(0);
+    fill(255);
     textAlign(CENTER);
     textFont("DM Serif Display");
     textSize(28);
-    text("Preface", width / 2 , 60);    
+    text("Introduction", width / 2 , 60);    
 
     //Introduction
     textAlign(LEFT);
     textSize(15);
+    textfont("Arial");
     text("Every person carries a tiny star inside them--quiet, steady, waiting. It is called--hope.\n"+
         "No one knows when their story will end, but everyone gets to choose what path they walk.\n"+
         "Some choice are dark, some choice are bright. Somewhere along this journey, five gems are hidden, each holding a single letter--fragement of a word almost forgotten.\n"+
@@ -98,6 +99,42 @@ function screen2(){
     //Show Chosen character:
     const imgSize=140;
     image(playerCharacter, width / 2 - imgSize/2 , height / 2 + 20, imgSize, imgSize);
+
+    //continue button:
+    if (!IntroButton&& !IntroShown){
+        IntroButton= new Sprite(width /2, height -80,160,50);
+        IntroButton.shapeColor=color("#759dc7");
+        IntroButton.text="Continue";
+        IntroButton.textSize= 20 ;
+        IntroButton.textColor ="black"
+    }
+     if (IntroButton.mouse.presses()){
+        IntroButton.remove();
+        IntroButton=null;
+        IntroShown=true;
+        screen=3;
+     }
+}
+
+function screen3(){
+    image(startBg,0,0,width, height)
+    fill(255);
+    textFont("DM Serif Display");
+    textSize(28);
+    text("Preface", width / 2 , 60);    
+
+    textAlign(LEFT);
+    textSize(18);
+    text("One night, without warning, the player's star suddenly begins to fade away, no illness, no wound, no explanation.\n"+
+        "There is a person who the player dreaming tell the player you only have 1 day left before your star disappear forever.",
+    30,100,width-60)
+    text("The secret--the player isn't an ordinary person,"+ character_name+ "is the Last star keeper who is the only person capable to restoring hope.\n"+
+        "Nowadays, when humanity becomes greedy and hopeless, it only cares about materialism; the light has shattered into countless gems.",
+    30,250,width-60)
+    text("The Darkness: The Darkness is a villain who was the first Star Keeper.\n"+
+        "After watching countless people betray, hate and destroy others, he abandoned Hope.\n"+
+        "His own star became black. He wished to extinguish every remaining star so no one could feel any pain.",
+    30,420,width-60)
 
     //continue button:
     if (!prefaceButton&& !prefaceShown){
@@ -111,6 +148,7 @@ function screen2(){
         prefaceButton.remove();
         prefaceButton=null;
         prefaceShown=true;
-        
-     }
+        screen=4;
+     }    
+    
 }
