@@ -9,7 +9,7 @@ function startscreen(){
 
     //Create the start button:
     if (!startButton){
-        startButton=createSprite(width/2, height/2 +130,130,48);
+        startButton=new Sprite(width/2, height/2 +130,130,48);
         startButton.shapeColor=color("#cad8fd");
         startButton.text="Start";
         startButton.textSize= 22;
@@ -46,13 +46,13 @@ function screen1(){
 
     //Create buttons 
     if (!choosebutton1 && !choosebutton2){
-        choosebutton1=createSprite(boyX +imgSize/2, imgY +imgSize+50,120,50);
+        choosebutton1=new Sprite(boyX +imgSize/2, imgY +imgSize+50,120,50);
         choosebutton1.shapeColor = color('#79BAEC');
         choosebutton1.text= "Max";
         choosebutton1.textSize = 22;
         choosebutton1.textColor="black";
 
-        choosebutton2= createSprite(girlX +imgSize/2,imgY+ imgSize+50,120,50);
+        choosebutton2= new Sprite(girlX +imgSize/2,imgY+ imgSize+50,120,50);
         choosebutton2.shapeColor= color('#AC94F4'); 
         choosebutton2.text="Maya";
         choosebutton2.textSize=22;
@@ -101,7 +101,7 @@ function screen2(){
 
     //continue button:
     if (!prefaceButton&& !prefaceShown){
-        prefaceButton= createSprite(width /2, height -80,160,50);
+        prefaceButton= new Sprite(width /2, height -80,160,50);
         prefaceButton.shapeColor=color("#759dc7");
         prefaceButton.text="Continue";
         prefaceButton.textSize= 20 ;
