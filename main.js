@@ -1,6 +1,8 @@
 /* Global Variables */
 let screen=0;
 let canvas;
+let collectedGems=[];
+
 
 //Screen0
 let startButton;
@@ -19,15 +21,13 @@ let prefaceButton;
 let prefaceShown =false;
 
 //screen 4
+let choosebutton3, choosebutton4;
+let ch1;//background
 
-
-//let ch1
-//let choosebutton3, choosebutton4;
-
-//Screen 5, define within the program
-
-//Screen 6
-//let choosebutton5;
+//screen 5-6
+let continueButton1, continueButton2;
+let gem1;//gem
+let cave;//background
 
 //screen 7
 //let continueButton1,continueButton2;
@@ -47,6 +47,11 @@ function preload() {
     mini1=loadImage("assets/mini1.jpg");
     ch1=loadImage("assets/ch1.jpg");
     cave=loadImage("assets/cave.jpg");
+    gem1=loadImage("assets/gem1.png");
+    gem2=loadImage("assets/gem2.png");
+    gem3=loadImage("assets/gem3.png");
+    gem4=loadImage("assets/gem4.png");
+    gem5=loadImage("assets/gem5.png");
     //rottenFoodImage={
         //apple:loadImage("assets/apple.png"),//
         //avocado:loadImage("assets/avocado.png"),//
@@ -83,5 +88,11 @@ function draw() {
         screen2();
     }else if(screen==3){
         screen3()
+    }else if (screen==4){
+        chapter1()
+    }else if (screen==5){
+        transtionscreen1()
+    }else if (screen==6){
+        transtionscreen2()
     }
 } 
