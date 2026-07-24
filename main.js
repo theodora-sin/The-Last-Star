@@ -12,10 +12,14 @@ let choosebutton1, choosebutton2;
 let playerCharacter,character_name;
 
 //Screen2
+let IntroButton;
+let IntroShown=false;
+//Screen3
 let prefaceButton;
 let prefaceShown =false;
 
-//Screen3, screen 4
+
+//screen 4
 //let choosebutton3, choosebutton4;
 
 //Screen 5, define within the program
