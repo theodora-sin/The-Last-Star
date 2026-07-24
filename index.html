@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
- 
-<script src="https://cdn.jsdelivr.net/npm/p5@1.11.4/lib/p5.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/p5@1.11.4/lib/addons/p5.sound.min.js"></script>
-  <script src="startscreen.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.4/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.4/lib/addons/p5.sound.min.js"></script>
+
+  <!-- planck must load before p5play; both pulled from the same p5play
+       release so they're guaranteed to match each other -->
+  <script src="https://cdn.jsdelivr.net/gh/quinton-ashley/p5play@3.35.3/planck.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/quinton-ashley/p5play@3.35.3/p5play.min.js"></script>
+
+  <script src="startscreen.js"></script>
 </head>
- 
+
 <body>
   <script src="main.js"></script>
 </body>
- 
-</html>
 
+</html>
