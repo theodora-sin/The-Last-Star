@@ -16,6 +16,7 @@ let playerCharacter,character_name;
 //Screen2
 let IntroButton;
 let IntroShown=false;
+
 //Screen3
 let prefaceButton;
 let prefaceShown =false;
@@ -26,18 +27,19 @@ let ch1;//background
 
 //screen 5-6
 let continueButton1, continueButton2;
-let gem1;//gem
+let gem1;//gem1
 let cave;//background
 
 //screen 7
-//let continueButton1,continueButton2;
-//let rottenFoodImage={};
-//let player,walls, obstacles;
-//let mazeStarted=false;
-//let mazeGameover=false;
-//let mazeWon=false;
-//let mazeCollected=0;
-//let showEndZoneHint=false;
+let continueButton3,continueButton4;
+let rottenFoodImages={};
+let player,walls, obstacles;
+let mazeStarted=false;
+let mazeGameOver=false;
+let mazeWon=false;
+let mazeCollected=0;
+let showEndZoneHint=false;
+let mini1;
 
 /* PRELOAD LOADS FILES */
 function preload() {
@@ -52,13 +54,13 @@ function preload() {
     gem3=loadImage("assets/gem3.png");
     gem4=loadImage("assets/gem4.png");
     gem5=loadImage("assets/gem5.png");
-    //rottenFoodImage={
-        //apple:loadImage("assets/apple.png"),//
-        //avocado:loadImage("assets/avocado.png"),//
-        //canfish:loadImage("assets/canfish.png"),//
-        //fishcan:loadImage("assets/fishcan.png"),//
-        //flour:loadImage("assets/flour.png"),//
-    //}
+    rottenFoodImages={
+        apple:loadImage("assets/apple.png"),//
+        avocado:loadImage("assets/avocado.png"),//
+        canfish:loadImage("assets/canfish.png"),//
+        fishcan:loadImage("assets/fishcan.png"),//
+        flour:loadImage("assets/flour.png"),//
+    }
 }
 
 
@@ -94,5 +96,13 @@ function draw() {
         transtionscreen1()
     }else if (screen==6){
         transtionscreen2()
+    }else if(screen==7){
+        if (!mazeStarted){
+            mazegame();
+        }else if (mazeGameOver){
+            drawMazeEndScreen();
+        }else{
+            runMazeGame();
+        }
     }
 } 
