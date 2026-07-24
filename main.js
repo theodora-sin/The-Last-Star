@@ -41,6 +41,18 @@ let mazeCollected=0;
 let showEndZoneHint=false;
 let mini1;
 
+//screen 8
+let ch2;//background
+let choosebutton5,choosebutton6;
+
+//screen9
+let continueButton5;
+let gem2;//gem2
+
+//screen 10
+let ch2_1;//background
+let continueButton6;
+
 /* PRELOAD LOADS FILES */
 function preload() {
     charImg1=loadImage("assets/max.png");
@@ -61,6 +73,8 @@ function preload() {
         fishcan:loadImage("assets/fishcan.png"),//
         flour:loadImage("assets/flour.png"),//
     }
+    ch2=loadImage("assets/ch2.jpg");
+    ch2_1=loadImage("assets/ch2_1.jpg");
 }
 
 
@@ -104,5 +118,11 @@ function draw() {
         }else{
             runMazeGame();
         }
+    }else if(screen==8){
+        chapter2();
+    }else if(screen==9){
+        chapter2_longpath();
+    }else if(screen==10){
+        chapter2_shortcut();
     }
 } 
