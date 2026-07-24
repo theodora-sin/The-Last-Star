@@ -5,8 +5,8 @@ function chapter1(){
     textAlign(LEFT);
     textSize(17);
     textFont("Arial");
-    text(character_name+"awaken in an endless forest where the whole world is dark.\n"+
-        character_name+"had a dim light lit the road, suddenly a voice talking and say:\n"+
+    text(character_name+" awaken in an endless forest where the whole world is dark.\n"+
+        character_name+" had a dim light lit the road, suddenly a voice talking and say:\n"+
         "The darkness know you are here, he is searchng for you-- run!!!",
     30,140,width-60);
     
