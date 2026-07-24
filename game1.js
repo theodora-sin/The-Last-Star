@@ -62,7 +62,7 @@ function mazegame() {
     "Use the arrow keys or swipe to guide your character through the cave.\n" +
     "Collect 3 food which is safe to eat during journey while avoiding rotten, opened food.\n" +
     "Reach the exit to continue your journey.",
-    width / 2, 150, width - 60
+    30, 150, width - 60
 );
     if (playerCharacter) {
         image(playerCharacter, 30, height - 380, 110, 160);
@@ -112,6 +112,9 @@ function initializeMazeGame() {
     //creating obstacles
     obstacles = new Group();
     obstacles.collider = "static";
+    for(const key of Object.keys(rottenFoodImages)){
+        rottenFoodImages[key].resize(26,26)
+    }
 
     //counting good and bad food
     let goodIndex = 0;
