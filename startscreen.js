@@ -5,7 +5,7 @@ function startscreen(){
     textAlign(CENTER);
     textSize(20);
     textFont("DMSerifDisplay");
-    text("Click the start button below to start the game!", 30, height/2 + 70, width - 60);
+    text("Click start button to start the game!", 30, height/2 + 70, width - 60);
 
     //Create the start button:
     if (!startButton){
@@ -89,7 +89,7 @@ function screen2(){
     //Introduction
     textAlign(LEFT);
     textSize(15);
-    textfont("Arial");
+    textFont("Arial");
     text("Every person carries a tiny star inside them--quiet, steady, waiting. It is called--hope.\n"+
         "No one knows when their story will end, but everyone gets to choose what path they walk.\n"+
         "Some choice are dark, some choice are bright. Somewhere along this journey, five gems are hidden, each holding a single letter--fragement of a word almost forgotten.\n"+
