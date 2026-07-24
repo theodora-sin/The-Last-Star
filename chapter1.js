@@ -16,7 +16,7 @@ function chapter1(){
     }
 
     if(!choosebutton3){
-        choosebutton3=new Sprite(width/2, height-140, 340,50);
+        choosebutton3=new Sprite(width/2, height-140, 150,50);
         choosebutton3.shapeColor=("#7D7098");
         choosebutton3.text="Run ";
         choosebutton3.textSize = 20;
