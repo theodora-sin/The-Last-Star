@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
-  <!-- p5play -->
-  <!-- Latest p5.js -->
-  <script src="https://cdn.jsdelivr.net/npm/p5@2.3.1/lib/p5.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js"></script>
- 
-  <script src="startscreen.js"></script>
 
+  <!-- ONE copy of p5.js only — loading it twice (as before) corrupts its
+       internal setup and causes the "presetup" crash you saw -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@2.3.1/lib/p5.min.js"></script>
+
+  <!-- planck + p5play, pulled from the same release so they're guaranteed
+       to match each other -->
+  <script src="https://cdn.jsdelivr.net/gh/quinton-ashley/p5play@3.35.3/planck.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/quinton-ashley/p5play@3.35.3/p5play.min.js"></script>
+
+  <script src="startscreen.js"></script>
 </head>
- 
+
 <body>
   <script src="main.js"></script>
 </body>
- 
-</html>
 
 </html>
