@@ -164,7 +164,7 @@ function drawMazeHUD() {
         fill(200, 0, 0);
         textAlign(CENTER, TOP);
         textSize(15);
-        text("Collect all 3 items first!", width / 2, 44, width - 60);
+        text("Collect all 3 items first!", 100, 44, width - 60);
         pop();
     }
 }
