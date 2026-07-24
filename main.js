@@ -77,5 +77,7 @@ function draw() {
         screen1();
     } else if (screen == 2) {
         screen2();
+    }else if(screen==3){
+        screen3()
     }
 } 
