@@ -135,7 +135,7 @@ function draw() {
     }else if(screen==10){
         chapter2_shortcut();
     }else if (screen==11){
-        if(!gameStarted2){
+        if(!GameStarted2){
             introScreen2()
         }else if(gameOver2){
             drawEndScreen2();
