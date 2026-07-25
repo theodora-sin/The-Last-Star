@@ -232,8 +232,6 @@ function drawEndScreen2(){
     }
 
     if (continueButton8.mouse.presses()) {
-        continueButton8.remove();
-        continueButton8=null;
         cleanupGame2();
         screen =12 ; // Go to chapter 3
     }    
