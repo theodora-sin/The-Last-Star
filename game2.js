@@ -2,7 +2,7 @@
 //screen11
 
 let score2=0;
-let blackHits2=3;
+let blackHits2=0;
 let GameStarted2 =false;
 let gameOver2 =false;
 let gameWon2=false;
@@ -15,7 +15,7 @@ let rightWall2=null;
 let continueButton7, continueButton8;
 let fallingObjects2=[];
 
-const gemColorEmoji={
+const gemColorEmoji2={
     orange:"🟠",
     blue:"🔵",
     red:"🔴",
@@ -32,7 +32,7 @@ function introScreen2(){
     textSize(26);
     text("Collect Gems", width / 2, 100);
     if(!continueButton7){
-        continueButton7= createSprite(width/2,height/2+140,120,44);
+        continueButton7= new Sprite(width/2,height/2+140,120,44);
         continueButton7.text="Start";
         continueButton7.color="blue";
         continueButton7.textColor="white";
@@ -66,7 +66,7 @@ function initializeGame2(){
     fallingObjects2=[];
 
     score2=0;
-    blackHits2=3;
+    blackHits2=0;
     timeLeft2=30;
     lastSecondTick2=millis();
     gameOver2=false;
@@ -90,97 +90,95 @@ function initializeGame2(){
 
     // Create falling gems
     for (let i = 0; i < 7; i++) {
-        let gem = new Sprite(random(40, width - 40), random(-200, -50), 25, 25);
-        gem.type = random(gemTypeWeights2);
-        gem.text = gemColorEmoji[gem.type];
-        gem.textSize=24;
-        gem.vel.y = random(3,5);
-        gem.vel.x = 0;
-        gem.collider = "dynamic"; 
-        gem.hitCounted = false;
-        fallingObjects2.push(gem);
+        spawnGem2();
     }
 }
 
-    
-
-function catchingGame2(){
-    if(!catcher2){
-        initializeGame2();
-        return 
+function spawnGem2() {
+  let gem = new Sprite(random(40, width - 40), random(-200, -50), 25, 25);
+  gem.type = random(gemTypeWeights2);
+  gem.text = gemColorEmoji2[gem.type];
+  gem.textSize = 24;
+  gem.vel.y = random(3, 5);
+  gem.vel.x = 0;
+  gem.collider = "dynamic";
+  gem.hitCounted = false;
+  fallingObjects2.push(gem);
+}
+ 
+function catchingGame2() {
+  image(mini2, 0, 0, width, height); // was missing — nothing redrew the canvas each frame during gameplay, so the intro screen's text stayed visible underneath everything
+ 
+  if (!catcher2) {
+    initializeGame2();
+    return;
+  }
+ 
+  if (millis() - lastSecondTick2 >= 1000) {
+    timeLeft2--;
+    lastSecondTick2 = millis();
+    if (timeLeft2 <= 0) {
+      endGame2(score2 >= 5);
+      return;
     }
-    //Countdown timer
-    if(millis()-lastSecondTick2>=1000){
-        timeLeft2--;
-        lastSecondTick2=millis();
-        if(timeLeft2<=0){
-            endGame2(score2 >=5);
-            return;
-        }
+  }
+ 
+  if (kb.pressing("left") || kb.pressing("ArrowLeft")) {
+    catcher2.x -= 5;
+  } else if (kb.pressing("right") || kb.pressing("ArrowRight")) {
+    catcher2.x += 5;
+  }
+  if (catcher2.mouse.dragging()) {
+    catcher2.x = mouse.x;
+  }
+  catcher2.x = constrain(catcher2.x, 40, width - 40);
+ 
+
+  for (let gem of fallingObjects2) {
+    let resetNeeded = false;
+ 
+    // missed a colored gem (fell past the bottom) — costs a mark, game keeps going
+    if (gem.y > height + 50) {
+      if (gem.type !== "black") {
+        score2--;
+      }
+      resetNeeded = true;
     }
-
-    //move catcher arrow key (keyboard):
-    if (kb.pressing("left") || kb.pressing("ArrowLeft")) {
-        catcher2.x -= 5;
-    } else if (kb.pressing("right") || kb.pressing("ArrowRight")) {
-        catcher2.x += 5;
-    }
-    //move using finger (i-pad)
-    if (catcher2.mouse.dragging()){
-        catcher2.x = mouse.x;
-    }
-
-    //KEEP CATCHER WITHIN SCREEN BOUNDS
-    catcher2.x=constrain(catcher2.x, 40, width-40);
-
-    for(let gem of fallingObjects2){
-        let resetNeeded=false;
-
-    //missed a color gem (fell past the bottom)
-    if(gem.y>height+50){
-        if(gem.type !== "black"){
-            score2--;
-
-            }
-        }
-    resetNeeded=true;
-    }
-
+ 
     // caught by the catcher
-    if(!resetNeeded&& gem.colliding(catcher2)&& !gem.hitCounted){
-        gem.hitCounted=true;
-        if(gem.type==="black"){
-            blackHits2++;
-            if(blackHits2>=3){
-                endGame2(false);
-                return;
-            }
-        }else{
-            score2++;
-        }resetNeeded=true;
-
-    // Reset gem position after collision
-    if(resetNeeded){
+    if (!resetNeeded && gem.colliding(catcher2) && !gem.hitCounted) {
+      gem.hitCounted = true;
+      if (gem.type === "black") {
+        blackHits2++;
+        if (blackHits2 >= 3) {
+          endGame2(false);
+          return;
+        }
+      } else {
+        score2++;
+      }
+      resetNeeded = true;
+    }
+ 
+    if (resetNeeded) {
       gem.y = random(-100, -50);
       gem.x = random(40, width - 40);
-      gem.vel.y = random(3,5); 
+      gem.vel.y = random(3, 5);
       gem.hitCounted = false;
-      gem.type=random(gemTypeWeights2);
-      gem.text= gemColorEmoji[gem.type];
-
-     }
-   } 
-
-   drawHUD2();
+      gem.type = random(gemTypeWeights2);
+      gem.text = gemColorEmoji2[gem.type];
+    }
+  }
+ 
+  drawHUD2();
 }
-
  function drawHUD2(){
     push();
     textAlign(LEFT,TOP);
     textSize(15);
     text(`Black gems hit: ${blackHits2} / 3`, 16, 16);
-    text(`Score: ${score} / 5`, 16, 38);
-    text(`Time: ${timeLeft}s`, 16, 60);
+    text(`Score: ${score2} / 5`, 16, 38);
+    text(`Time: ${timeLeft2}s`, 16, 60);
     pop();
  }
 
@@ -190,9 +188,9 @@ function endGame2(won){
 
     for(let gem of fallingObjects2)gem.remove();
     fallingObjects2=[];
-    if (leftWall) {
-    leftWall.remove();
-    leftWall = null;
+    if (leftWall2) {
+    leftWall2.remove();
+    leftWall2 = null;
   }
     if (rightWall2) {
     rightWall2.remove();
@@ -227,8 +225,8 @@ function drawEndScreen2(){
 
     if(!continueButton8){
         continueButton8=new Sprite(width/2, height/2+120,140,48);
-        ontinueButton8.text="Continue";
-        continueButton8.color= gameWon? "green": "blue";
+        continueButton8.text="Continue";
+        continueButton8.color= gameWon2? "green": "blue";
         continueButton8.textColor="black";
         continueButton8.collider="static";
     }
@@ -256,9 +254,9 @@ function cleanupGame2() {
     }
     fallingObjects2 = [];
 
-    if (gamecontinueButton8) {
-        gamecontinueButton8.remove();
-        gamecontinueButton8 = null;
+    if (continueButton8) {
+        continueButton8.remove();
+        continueButton8 = null;
     }
 
     if (leftWall2) {
@@ -272,5 +270,5 @@ function cleanupGame2() {
   }
 
   score2 = 0;
-  blackHits2=3;
+  blackHits2=0;
 }
