@@ -53,6 +53,14 @@ let gem2;//gem2
 let ch2_1;//background
 let continueButton6;
 
+//screen 11
+let gem3, gem4, gem5, gem6; //gem for the game
+let mini2;
+//other variable already defined within the js file
+
+//screen 12
+
+
 /* PRELOAD LOADS FILES */
 function preload() {
     charImg1=loadImage("assets/max.png");
@@ -66,6 +74,7 @@ function preload() {
     gem3=loadImage("assets/gem3.png");
     gem4=loadImage("assets/gem4.png");
     gem5=loadImage("assets/gem5.png");
+    gem6=loadImage("assets/gem6.png");
     rottenFoodImages={
         apple:loadImage("assets/apple.png"),//
         avocado:loadImage("assets/avocado.png"),//
@@ -75,6 +84,7 @@ function preload() {
     }
     ch2=loadImage("assets/ch2.jpg");
     ch2_1=loadImage("assets/ch2_1.jpg");
+    mini2=loadImage("assets.mini2.jpg")
 }
 
 
@@ -124,5 +134,13 @@ function draw() {
         chapter2_longpath();
     }else if(screen==10){
         chapter2_shortcut();
+    }else if (screen==11){
+        if(!gameStarted2){
+            introScreen2()
+        }else if(gameOver2){
+            drawEndScreen2();
+        }else{
+            catchingGame();
+        }
     }
 } 
