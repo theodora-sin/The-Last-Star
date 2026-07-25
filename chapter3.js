@@ -43,7 +43,7 @@ function conversation(){
     rect(20,460,width-40,150,12); //create chat box
 
     //speaker name
-    fill("#080808");
+    fill("#e0c9ff");
     textAlign(LEFT);
     textFont("Arial");
     textStyle(BOLD);
@@ -52,7 +52,7 @@ function conversation(){
     textStyle(NORMAL);
 
     // dialogue text 
-    fill(255);
+    fill(0);
     textSize(17);
     text(conversationLines[dialogueIndex].line, 35, 515, 330, 80);
 
