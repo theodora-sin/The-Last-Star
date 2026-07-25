@@ -23,7 +23,7 @@ const gemColorEmoji={
     yellow:"🟡",
     black:"⚫"
 }
-const gemTypeWeights=["orange","red","blue","yellow","purple","black","black"]
+const gemTypeWeights2=["orange","red","blue","yellow","purple","black","black"]
 
 function introScreen2(){
     image(mini2,0,0,width,height);
