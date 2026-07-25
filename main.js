@@ -54,12 +54,25 @@ let ch2_1;//background
 let continueButton6;
 
 //screen 11
-let gem3, gem4, gem5, gem6; //gem for the game
 let mini2;
 //other variable already defined within the js file
 
 //screen 12
+let ch3;
+let continueButton9
 
+//screen 13
+let ch3_1;
+let choosebutton7, choosebutton8
+let dialogueIndex=0
+let dialogueContinueButton;
+
+//screen 14
+let gem3; //gem
+let continueButton10
+
+//screen 15
+let continueButton11
 
 /* PRELOAD LOADS FILES */
 function preload() {
@@ -85,6 +98,8 @@ function preload() {
     ch2=loadImage("assets/ch2.jpg");
     ch2_1=loadImage("assets/ch2_1.jpg");
     mini2=loadImage("assets/mini2.jpg");
+    ch3=loadImage("assets/ch3.jpg");
+    ch3_1=loadImage("assets/ch3_1.jpg");
 }
 
 
@@ -138,9 +153,17 @@ function draw() {
         if(!GameStarted2){
             introScreen2()
         }else if(gameOver2){
-            drawEndScreen2();
-        }else{
             catchingGame2();
+        }else{
+            drawEndScreen2();
         }
+    }else if (screen==12){
+        chapter3();
+    }else if(screen==13){
+        conversation();
+    }else if(screen==14){
+        transitionscreen5();
+    }else if (screen==15){
+        transitionscree6();
     }
 } 
