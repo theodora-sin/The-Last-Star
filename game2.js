@@ -99,7 +99,7 @@ function spawnGem2() {
   gem.type = random(gemTypeWeights2);
   gem.text = gemColorEmoji2[gem.type];
   gem.textSize = 24;
-  gem.vel.y = random(3, 5);
+  gem.vel.y = random(3,5);
   gem.vel.x = 0;
   gem.collider = "dynamic";
   gem.hitCounted = false;
@@ -163,7 +163,7 @@ function catchingGame2() {
     if (resetNeeded) {
       gem.y = random(-100, -50);
       gem.x = random(40, width - 40);
-      gem.vel.y = random(3, 5);
+      gem.vel.y = random(3,5);
       gem.hitCounted = false;
       gem.type = random(gemTypeWeights2);
       gem.text = gemColorEmoji2[gem.type];
@@ -204,20 +204,20 @@ function endGame2(won){
 
 function drawEndScreen2(){
     push();
-    fill(0);
+    fill(255);
     textAlign(CENTER);
     if (gameWon2) {
         textSize(22);
-        text("You Win!\n Final Score: " +score2
+        text("You Win!\n Final Score: " +30
         , width / 2, height / 2 - 60, width-60);
     } else {
         textSize(22);
         text("You Lost!", width / 2, height / 2 - 80);
         textSize(15);
         if(blackHits2>=3){
-            text("You caught 3 black gems.", width/2, height/2-30, width-60);
+            text("You caught 3 black gems.", 30, height/2-30, width-60);
         }else{
-            text("You didn't reach 5 marks in time.\n Final Marks: " +score2, width/2, height/2 - 30, width - 60);
+            text("You didn't reach 5 marks in time.\n Final Marks: " +30, width/2, height/2 - 30, width - 60);
         }
     }
     pop()
@@ -232,6 +232,8 @@ function drawEndScreen2(){
     }
 
     if (continueButton8.mouse.presses()) {
+        continueButton8.remove();
+        continueButton8=null;
         cleanupGame2();
         screen =12 ; // Go to chapter 3
     }    
