@@ -55,7 +55,7 @@ const obstacleDefs = [
 
 
 function mazegame() {
-    image(mini2,0,0,width,height);//food background,
+    image(mini1,0,0,width,height);//food background,
     fill(0);
     textAlign(CENTER);
     textSize(26);
