@@ -33,7 +33,7 @@ function chapter3(){
 const conversationLines = [
     { speaker: "Stranger 1", line: "What's the point of trying anymore? Every road just ends in despair." },
     { speaker: "Stranger 2", line: "Maybe, but if we stop walking, we'll never find another path." },
-    { speaker: "Stranger 1", line: "But... I've tried so many times. Every ending is the same — it always ends in disappointment disappointment." }
+    { speaker: "Stranger 1", line: "But... I've tried so many times. Every ending is the same — it always ends in disappointment." }
 ];
 
 function conversation(){
@@ -55,6 +55,8 @@ function conversation(){
     fill(255);
     textSize(17);
     text(conversationLines[dialogueIndex].line, 35, 515, 330, 80);
+
+    const isLastLine= dialogueIndex >= conversationLines.length - 1;
   if (!isLastLine) {
     if(!dialogueContinueButton){
         dialogueContinueButton= new Sprite(width/2, 645,160,44);
