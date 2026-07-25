@@ -140,7 +140,7 @@ function draw() {
         }else if(gameOver2){
             drawEndScreen2();
         }else{
-            catchingGame();
+            catchingGame2();
         }
     }
 } 
