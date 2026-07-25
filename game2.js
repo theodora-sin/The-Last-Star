@@ -67,7 +67,7 @@ function initializeGame2(){
 
     score2=0;
     blackHits2=3;
-    timeLeft=30;
+    timeLeft2=30;
     lastSecondTick2=millis();
     gameOver2=false;
     gameWon2=false;
@@ -110,11 +110,11 @@ function catchingGame2(){
         return 
     }
     //Countdown timer
-    if(mills()-lastSecondTick2>=1000){
+    if(millis()-lastSecondTick2>=1000){
         timeLeft2--;
-        lastSecondTic2k=millis();
+        lastSecondTick2=millis();
         if(timeLeft2<=0){
-            endGame2(score >=5);
+            endGame2(score2 >=5);
             return;
         }
     }
@@ -143,7 +143,7 @@ function catchingGame2(){
 
             }
         }
-        resetNeeded=true;
+    resetNeeded=true;
     }
 
     // caught by the catcher
@@ -165,7 +165,7 @@ function catchingGame2(){
       gem.x = random(40, width - 40);
       gem.vel.y = random(3,5); 
       gem.hitCounted = false;
-      gem.type=random(gemTypeWeights);
+      gem.type=random(gemTypeWeights2);
       gem.text= gemColorEmoji[gem.type];
 
      }
@@ -178,7 +178,7 @@ function catchingGame2(){
     push();
     textAlign(LEFT,TOP);
     textSize(15);
-    text(`Lives: ${lives}`, 16, 16);
+    text(`Black gems hit: ${blackHits2} / 3`, 16, 16);
     text(`Score: ${score} / 5`, 16, 38);
     text(`Time: ${timeLeft}s`, 16, 60);
     pop();
@@ -210,7 +210,7 @@ function drawEndScreen2(){
     textAlign(CENTER);
     if (gameWon2) {
         textSize(22);
-        text("You Win!\n Final Score: " +score
+        text("You Win!\n Final Score: " +score2
         , width / 2, height / 2 - 60, width-60);
     } else {
         textSize(22);
