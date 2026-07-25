@@ -217,7 +217,7 @@ function drawEndScreen2(){
         if(blackHits2>=3){
             text("You caught 3 black gems.", width/2, height/2-30, );
         }else{
-            text("You didn't reach 5 marks in time.\n Final Marks: " +30, width/2, height/2 - 30, width - 60);
+            text("You didn't reach 5 marks in time.\n Final Marks: " ,width/2, height/2 - 30);
         }
     }
     pop()
