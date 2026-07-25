@@ -211,13 +211,11 @@ function drawEndScreen2(){
         text("You Win!\n Final Score: " 
         , width / 2, height / 2 - 60);
     } else {
-        textSize(22);
-        text("You Lost!", width / 2, height / 2 );
-        textSize(15);
+        textSize(20);
         if(blackHits2>=3){
-            text("You caught 3 black gems.", width/2, height/2-30, );
+            text("You lost!\n You caught 3 black gems.", width/2, height/2-30, );
         }else{
-            text("You didn't reach 5 marks in time.\n Final Marks: " ,width/2, height/2 - 30);
+            text("You lost!\n You didn't reach 5 marks in time.\n Final Marks: ",width/2, height/2 - 30);
         }
     }
     pop()
