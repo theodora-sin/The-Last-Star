@@ -17,6 +17,8 @@ const wallDefs = [
     [550, 300, 8, 400],
     [350, 500, 300, 8],
     [150, 500, 200, 8],
+    [525, 500, 50, 8],
+    [480, 420, 60, 6],
     [50, 350, 8, 200],
     [50, 200, 8, 200],
     [150, 160, 6, 60],
@@ -30,7 +32,8 @@ const wallDefs = [
     [300, 420, 6, 80],
     [200, 440, 100, 6],
     [150, 380, 60, 6],
-    [460, 200, 60, 6]
+    [460, 200, 60, 6],
+
 ];
 
 //Obstacle(good=safe to collect, bad =unwanted food)
@@ -52,7 +55,7 @@ const obstacleDefs = [
 
 
 function mazegame() {
-    image(mini1,0,0,width,height);//food background,
+    image(mini2,0,0,width,height);//food background,
     fill(0);
     textAlign(CENTER);
     textSize(26);
@@ -95,29 +98,12 @@ function initializeMazeGame() {
     mazeWon = false;
     showEndZoneHint = false;
 
-    player = new Sprite(mazeScaleX(320), mazeScaleY(90), 24, 24);
-    player.text = "📦";
-    player.textSize = 26;
-    player.collider = "dynamic";
-
-    //create walls
-    walls = new Group();
-    walls.color = "black";
-    walls.collider = "static";
-    walls.stroke = "white";
-    walls.strokeWeight = 2;
-
-    for (const [x, y, w, h] of wallDefs) {
-        new walls.Sprite(mazeScaleX(x), mazeScaleY(y), mazeScaleX(w), mazeScaleY(h));
-    }
-
     //creating obstacles
     obstacles = new Group();
     obstacles.collider = "static";
     for(const key of Object.keys(rottenFoodImages)){
         rottenFoodImages[key].resize(26,26)
     }
-
     //counting good and bad food
     let goodIndex = 0;
     let badIndex = 0;
@@ -134,6 +120,22 @@ function initializeMazeGame() {
             badIndex++;
         }
     }
+    //create walls
+    walls = new Group();
+    walls.color = "black";
+    walls.collider = "static";
+    walls.stroke = "white";
+    walls.strokeWeight = 2;
+
+    for (const [x, y, w, h] of wallDefs) {
+        new walls.Sprite(mazeScaleX(x), mazeScaleY(y), mazeScaleX(w), mazeScaleY(h));
+    }
+
+    player = new Sprite(mazeScaleX(320), mazeScaleY(90), 24, 24);
+    player.text = "📦";
+    player.textSize = 26;
+    player.collider = "dynamic";
+
 }
 
 function drawMazeMarkers() {
@@ -164,7 +166,7 @@ function drawMazeHUD() {
         fill(200, 0, 0);
         textAlign(CENTER, TOP);
         textSize(15);
-        text("Collect all 3 items first!", 100, 44, width - 60);
+        text("Collect all 3 items first!", 30, 44, width - 60);
         pop();
     }
 }
@@ -250,7 +252,8 @@ function drawMazeEndScreen() {
 
     if (mazeWon) {
         textSize(22);
-        text("You made it! You collected 3 good items." 
+        text("You made it!\n"+
+            "You collected 3 good items." 
             , 30, height / 2 - 40, width - 60);
     } else {
         textSize(22);
@@ -259,6 +262,9 @@ function drawMazeEndScreen() {
     }
     pop();
 
+    if (playerCharacter) {
+        image(playerCharacter, 30, height - 380, 110, 160);
+    }
     if (!continueButton4) {
         continueButton4= new Sprite(width / 2, height / 2 + 100, 140, 48);
         continueButton4.text = "Continue";
