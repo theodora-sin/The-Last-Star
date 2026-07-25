@@ -84,7 +84,7 @@ function preload() {
     }
     ch2=loadImage("assets/ch2.jpg");
     ch2_1=loadImage("assets/ch2_1.jpg");
-    mini2=loadImage("assets.mini2.jpg")
+    mini2=loadImage("assets/mini2.jpg")
 }
 
 
