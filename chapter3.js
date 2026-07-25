@@ -43,7 +43,7 @@ function conversation(){
     rect(20,460,width-40,150,12); //create chat box
 
     //speaker name
-    fill("#e0c9ff");
+    fill("#080808");
     textAlign(LEFT);
     textFont("Arial");
     textStyle(BOLD);
