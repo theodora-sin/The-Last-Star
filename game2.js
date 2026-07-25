@@ -208,14 +208,14 @@ function drawEndScreen2(){
     textAlign(CENTER);
     if (gameWon2) {
         textSize(22);
-        text("You Win!\n Final Score: " +30
-        , width / 2, height / 2 - 60, width-60);
+        text("You Win!\n Final Score: " +
+        , width / 2, height / 2 - 60);
     } else {
         textSize(22);
-        text("You Lost!", width / 2, height / 2 - 80);
+        text("You Lost!", width / 2, height / 2 );
         textSize(15);
         if(blackHits2>=3){
-            text("You caught 3 black gems.", 30, height/2-30, width-60);
+            text("You caught 3 black gems.", width/2, height/2-30, );
         }else{
             text("You didn't reach 5 marks in time.\n Final Marks: " +30, width/2, height/2 - 30, width - 60);
         }
