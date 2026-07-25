@@ -153,17 +153,18 @@ function draw() {
         if(!GameStarted2){
             introScreen2()
         }else if(gameOver2){
-            catchingGame2();
-        }else{
             drawEndScreen2();
+        }else{
+            catchingGame2();
         }
     }else if (screen==12){
         chapter3();
     }else if(screen==13){
         conversation();
     }else if(screen==14){
-        transitionscreen5();
+        transtionscreen5();
     }else if (screen==15){
-        transitionscree6();
+        transtionscreen6();
     }
+} 
 } 
