@@ -208,7 +208,7 @@ function drawEndScreen2(){
     textAlign(CENTER);
     if (gameWon2) {
         textSize(22);
-        text("You Win!\n Final Score: " +
+        text("You Win!\n Final Score: " 
         , width / 2, height / 2 - 60);
     } else {
         textSize(22);
