@@ -5,7 +5,7 @@ let score2=0;
 let blackHits2=3;
 let GameStarted2 =false;
 let gameOver2 =false;
-let gameWon=false;
+let gameWon2=false;
 let timeLeft2=30;
 let lastSecondTick2 =0;
 
@@ -36,7 +36,7 @@ function introScreen2(){
     }
 
     push();
-    textAlign(CENTER);
+    textAlign(LEFT);
     textSize(15);
     fill(255);
     text(
@@ -45,7 +45,7 @@ function introScreen2(){
         "You have 3 lives — lose one if a black jem is caught,\n" +
         "If you can't miss a color gem, you lose 1 mark,\n"+
         "Score at least 5 marks within 30 seconds to win.",
-        width / 2, height / 2 - 60, width - 60
+        30, height / 2 - 60, width - 60
     );
     pop();
 
@@ -59,14 +59,14 @@ function introScreen2(){
 function initializeGame2(){
     if(catcher2)catcher2.remove();
     for(let gem of fallingObjects)gem.remove();
-    fallingObjects=[];
+    fallingObjects2=[];
 
     score2=0;
     blackHits2=3;
     timeLeft=30;
-    lastSecondTick=millis();
-    gameOver=false;
-    gameWon=false;
+    lastSecondTick2=millis();
+    gameOver2=false;
+    gameWon2=false;
 
 
     //Create walls:
@@ -149,7 +149,7 @@ function catchingGame2(){
         gem.hitCounted=true;
         if(gem.type==="black"){
             blackHits2++;
-            if(blackHits>=3){
+            if(blackHits2>=3){
                 endGame2(false);
                 return;
             }
@@ -183,8 +183,8 @@ function catchingGame2(){
  }
 
 function endGame2(won){
-    gameOver=true;
-    gameWon =won;
+    gameOver2=true;
+    gameWon2 =won;
 
     for(let gem of fallingObjects)gem.remove();
     fallingObjects=[];
@@ -206,7 +206,7 @@ function drawEndScreen2(){
     push();
     fill(0);
     textAlign(CENTER);
-    if (gameWon) {
+    if (gameWon2) {
         textSize(22);
         text("You Win!\n Final Score: " +score
         , width / 2, height / 2 - 60, width-60);
@@ -242,21 +242,21 @@ function drawEndScreen2(){
 
 function cleanupGame2() {
     GameStarted2 = false;
-    gameOver=false;
+    gameOver2=false;
 
-    if (catcher) {
-        catcher.remove();
-        catcher = null;
+    if (catcher2) {
+        catcher2.remove();
+        catcher2 = null;
     }
 
     for (let gem of fallingObjects) {
         gem.remove();
     }
-    fallingObjects = [];
+    fallingObjects2 = [];
 
-    if (gamecontinueButton1) {
-        gamecontinueButton1.remove();
-        gamecontinueButton1 = null;
+    if (gamecontinueButton8) {
+        gamecontinueButton8.remove();
+        gamecontinueButton8 = null;
     }
 
     if (leftWall) {
@@ -269,6 +269,6 @@ function cleanupGame2() {
         rightWall = null;
   }
 
-  score = 0;
+  score2 = 0;
   blackHits2=3;
 }
