@@ -87,7 +87,7 @@ function initializeGame2(){
     catcher2.text = "🧺";
     catcher2.textSize = 40;
     catcher2.collider = "kinematic"; 
-    
+
     // Create falling gems
     for (let i = 0; i < 7; i++) {
         let gem = new Sprite(random(40, width - 40), random(-200, -50), 25, 25);
@@ -96,7 +96,6 @@ function initializeGame2(){
         gem.textSize=24;
         gem.vel.y = random(3,5);
         gem.vel.x = 0;
-        gem.type = gemType;
         gem.collider = "dynamic"; 
         gem.hitCounted = false;
         fallingObjects2.push(gem);
