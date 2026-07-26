@@ -1,5 +1,5 @@
 function chapter3(){
-    image(mini2,0,0,width,height);
+    image(ch3,0,0,width,height);
     fill(255);
     textAlign(LEFT);
     textSize(17);
