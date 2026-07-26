@@ -1,7 +1,7 @@
 const GRID_COLS4 =20;
 const GRID_ROWS4 =40;
-const Move_interval4=100;
-const target_score4=10;
+const MOVE_INTERVAL4=100;
+const TARGET_SCORE4=10;
 
 let CELL_SIZE4;
 let Started4=false;
@@ -53,7 +53,7 @@ function initializeSnake4(){
     snakeBody= [[snakeX, snakeY]];
     score4 = 0;
     gameOver4 = false;
-    Won4 = false;
+    gameWon4 = false;
     lastMoveTime4 = millis();
     
     updateFoodPosition4();
@@ -68,6 +68,9 @@ function playSnake4(){
     fill(255,200,0);
     rect(foodX * CELL_SIZE4, foodY * CELL_SIZE4, CELL_SIZE4, CELL_SIZE4);    
 
+  if (millis() - lastMoveTime4 >= MOVE_INTERVAL4) {
+    lastMoveTime4 = millis();
+ 
     if (snakeX === foodX && snakeY === foodY) {
       updateFoodPosition4();
       snakeBody.push([foodX, foodY]);
@@ -78,46 +81,50 @@ function playSnake4(){
         return;
       }
     }
+ 
     snakeX += velocityX;
     snakeY += velocityY;
-    for(let i=snakeBody.length -1;i>0;i--){
-        snakeBody[i]=snakeBody[i-1];
+ 
+    for (let i = snakeBody.length - 1; i > 0; i--) {
+      snakeBody[i] = snakeBody[i - 1];
     }
-    snakeBody[0]=[snakeX,snakeY];
-    if (snakeX< 0 || snakeX >= GRID_COLS4 || snakeY < 0 || snakeY >= GRID_ROWS4) {
+    snakeBody[0] = [snakeX, snakeY];
+ 
+    if (snakeX < 0 || snakeX >= GRID_COLS4 || snakeY < 0 || snakeY >= GRID_ROWS4) {
       endSnake4(false);
       return;
     }
-    for(let i=1;i<snakeBody.length;i++){
-        if(snakeBody[i][0]=== snakeX&&snakeBody[i][1]===snakeY){
-            endSnake4(false);
-            return;
-        }
+ 
+    for (let i = 1; i < snakeBody.length; i++) {
+      if (snakeBody[i][0] === snakeX && snakeBody[i][1] === snakeY) {
+        endSnake4(false);
+        return;
+      }
     }
-    
-    fill(120,220,150);
+  }
+ 
+  fill(120, 220, 150);
   for (const segment of snakeBody) {
     rect(segment[0] * CELL_SIZE4, segment[1] * CELL_SIZE4, CELL_SIZE4, CELL_SIZE4);
-    }
-    
-    fill(255);
-    textAlign(LEFT, TOP);
-    textSize(16);
-    text(`Score: ${score4}`, 10, 10);
-    text(`High Score: ${highScore4}`, 10, 32);
+  }
+ 
+  fill(255);
+  textAlign(LEFT, TOP);
+  textSize(16);
+  text(`Score: ${score4}`, 10, 10);
+  text(`High Score: ${highScore4}`, 10, 32);
 }
 
-
 function keyPressed() {
-  if (screen !== 20|| !Started4 || GameOver4) return;
+  if (screen !== 20|| !Started4 || gameOver4) return;
  
   if (keyCode === UP_ARROW && velocityY !== 1) {
     velocityX = 0; velocityY = -1;
   } else if (keyCode === DOWN_ARROW && velocityY !== -1) {
     velocityX = 0; velocityY = 1;
-  } else if (keyCode === LEFT_ARROW && velocity4 !== 1) {
+  } else if (keyCode === LEFT_ARROW && velocityX !== 1) {
     velocityX= -1; velocityY = 0;
-  } else if (keyCode === RIGHT_ARROW && velocity4 !== -1) {
+  } else if (keyCode === RIGHT_ARROW && velocityX !== -1) {
     velocityX = 1; velocityY = 0;
   }
 }
