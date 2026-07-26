@@ -69,10 +69,23 @@ let dialogueContinueButton;
 
 //screen 14
 let gem3; //gem
-let continueButton10
+let continueButton10;
 
 //screen 15
-let continueButton11
+let continueButton11;
+
+//screen16
+let continueButton13;
+let ch4
+
+//screen17
+let choosebutton9, choosebutton10;
+
+//screen18
+let continueButton14;
+//screen19
+let continueButton15
+
 
 /* PRELOAD LOADS FILES */
 function preload() {
@@ -100,6 +113,7 @@ function preload() {
     mini2=loadImage("assets/mini2.jpg");
     ch3=loadImage("assets/ch3.jpg");
     ch3_1=loadImage("assets/ch3_1.jpg");
+    ch4=loadImage("assets/ch4.jpg");
 }
 
 
@@ -165,6 +179,13 @@ function draw() {
         transtionscreen5();
     }else if (screen==15){
         transtionscreen6();
+    }else if (screen==16){
+        chapter4();
+    }else if (screen==17){
+        dilemma4();
+    }else if (screen==18){
+        transitionscreen7()
+    }else if(screen==19){
+        transitionscreen8()
     }
-} 
-
+}
