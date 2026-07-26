@@ -3,8 +3,8 @@ const GRID_ROWS4 =40;
 const MOVE_INTERVAL4=100;
 const TARGET_SCORE4=10;
 
-let CELL_SIZE4;
 let SnakeGameStarted = false;
+let CELL_SIZE4;
 let gameOver4 = false;
 let gameWon4=false;
 let foodX, foodY;
