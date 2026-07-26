@@ -85,6 +85,7 @@ let choosebutton9, choosebutton10;
 let continueButton14;
 //screen19
 let continueButton15
+//Screen 20 define on its js file
 
 
 /* PRELOAD LOADS FILES */
@@ -184,8 +185,16 @@ function draw() {
     }else if (screen==17){
         dilemma4();
     }else if (screen==18){
-        transitionscreen7()
+        transtionscreen7()
     }else if(screen==19){
-        transitionscreen8()
+        transtionscreen8()
+    }else if(screen==20){
+        if(!Started4){
+            introScreen4()
+        }else if(gameOver4){
+            drawSnakeEndScreen4()
+        }else{
+            playSnake4()
+        }
     }
 }
