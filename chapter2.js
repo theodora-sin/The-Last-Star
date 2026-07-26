@@ -12,13 +12,13 @@ function chapter2() {
         , 30, 140, width - 60);
 
     if(!choosebutton5){
-        choosebutton5=new Sprite(width/2, height-140, 150,50);
+        choosebutton5=new Sprite(width/2, height-140, 200,50);
         choosebutton5.shapeColor=color("#7D7098");
         choosebutton5.text="Take longer path ";
         choosebutton5.textSize = 20;
         choosebutton5.textColor="black";
 
-        choosebutton6=new Sprite(width/2, height-80, 150,50);
+        choosebutton6=new Sprite(width/2, height-80, 200,50);
         choosebutton6.shapeColor=color("#709398");
         choosebutton6.text="Take shortcut";
         choosebutton6.textSize = 20;
