@@ -75,7 +75,7 @@ let continueButton10;
 let continueButton11;
 
 //screen16
-let continueButton13;
+let continueButton12;
 let ch4
 
 //screen17
