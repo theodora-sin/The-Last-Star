@@ -46,13 +46,13 @@ function dilemma4(){
     }
     
     if(!choosebutton9){
-        choosebutton9= new Sprite(width/2, height-140, 300,50);
+        choosebutton9= new Sprite(width/2, height-140, 200,50);
         choosebutton9.shapeColor=color("#7D7098");
         choosebutton9.text="Save the child";
         choosebutton9.textSize = 20;
         choosebutton9.textColor="black";
 
-        choosebutton10=new Sprite(width/2, height-80, 150,50);
+        choosebutton10=new Sprite(width/2, height-80, 200,50);
         choosebutton10.shapeColor=color("#7D7098");
         choosebutton10.text="Ignore";
         choosebutton10.textSize = 20;
