@@ -11,7 +11,6 @@ let foodX, foodY;
 let snakeX, snakeY;
 let velocityX=0,velocityY=0;
 let snakeBody=[];
-let foodX,foodY;
 let lastMoveTime4=0;
 let score4=0;
 let highScore4=0;
