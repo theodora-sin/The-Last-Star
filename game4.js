@@ -4,7 +4,7 @@ const MOVE_INTERVAL4=100;
 const TARGET_SCORE4=10;
 
 let CELL_SIZE4;
-let Started4=false;
+let Started4 = false;
 let gameOver4 = false;
 let gameWon4=false;
 let foodX, foodY;
