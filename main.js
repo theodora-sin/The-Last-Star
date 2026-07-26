@@ -189,7 +189,7 @@ function draw() {
     }else if(screen==19){
         transtionscreen8()
     }else if(screen==20){
-        if(!Started4){
+        if(!SnakeGameStarted){
             introScreen4()
         }else if(gameOver4){
             drawSnakeEndScreen4()
