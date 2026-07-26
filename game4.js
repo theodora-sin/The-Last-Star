@@ -6,16 +6,16 @@ const target_score4=10;
 let CELL_SIZE4;
 let Started4=false;
 let gameOver4 = false;
-let Won4=false;
+let gameWon4=false;
 let foodX, foodY;
 let snakeX, snakeY;
-let velocityX=0,velcoityY=0;
+let velocityX=0,velocityY=0;
 let snakeBody=[];
 let foodX,foodY;
 let lastMoveTime4=0;
 let score4=0;
 let highScore4=0;
-let conitnueButton16,continueButton17;
+let continueButton16,continueButton17;
 
 function introScreen4(){
     image(ch4,0,0,width,height);
@@ -52,7 +52,7 @@ function initializeSnake4(){
     velocityY=0;
     snakeBody= [[snakeX, snakeY]];
     score4 = 0;
-    GameOver4 = false;
+    gameOver4 = false;
     Won4 = false;
     lastMoveTime4 = millis();
     
@@ -84,7 +84,7 @@ function playSnake4(){
         snakeBody[i]=snakeBody[i-1];
     }
     snakeBody[0]=[snakeX,snakeY];
-    if (snakeX4 < 0 || snakeX4 >= GRID_COLS4 || snakeY4 < 0 || snakeY4 >= GRID_ROWS4) {
+    if (snakeX< 0 || snakeX >= GRID_COLS4 || snakeY < 0 || snakeY >= GRID_ROWS4) {
       endSnake4(false);
       return;
     }
@@ -114,15 +114,15 @@ function keyPressed() {
   if (keyCode === UP_ARROW && velocityY !== 1) {
     velocityX = 0; velocityY = -1;
   } else if (keyCode === DOWN_ARROW && velocityY !== -1) {
-    velocity4 = 0; velocity4 = 1;
+    velocityX = 0; velocityY = 1;
   } else if (keyCode === LEFT_ARROW && velocity4 !== 1) {
-    velocity4 = -1; velocity4 = 0;
+    velocityX= -1; velocityY = 0;
   } else if (keyCode === RIGHT_ARROW && velocity4 !== -1) {
-    velocity4 = 1; velocity4 = 0;
+    velocityX = 1; velocityY = 0;
   }
 }
 
-function endSnake(won){
+function endSnake4(won){
     gameOver4=true;
     gameWon4=won;
 }
@@ -132,7 +132,7 @@ function drawSnakeEndScreen4() {
   fill(255);
   textAlign(CENTER, CENTER);
   textSize(22);
-  if (snakeWon4) {
+  if (gameWon4) {
     text(`You reached ${TARGET_SCORE4} points!`, width / 2, height / 2 - 40, width - 60);
   } else {
     text("Game Over", width / 2, height / 2 - 60);
@@ -152,7 +152,7 @@ function drawSnakeEndScreen4() {
     continueButton17.remove();
     continueButton17 = null;
     Started4 = false;
-    GameOver4 = false;
+    gameOver4 = false;
     screen=21
      }
 }
