@@ -94,7 +94,7 @@ let continueButton21;
 //screen 22 
 let choosebutton11, choosebutton12;
 //screen 23
-let conitnueButton22;
+let continueButton22;
 let gem5;
 //screen 24
 let continueButton23;
