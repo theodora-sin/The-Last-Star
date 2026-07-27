@@ -95,7 +95,8 @@ function screen2(){
     text("Every person carries a tiny star inside them--quiet, steady, waiting. It is called--hope.\n"+
         "No one knows when their story will end, but everyone gets to choose what path they walk.\n"+
         "Some choice are dark, some choice are bright. Somewhere along this journey, five gems are hidden, each holding a single letter--fragement of a word almost forgotten.\n"+
-        "Only those who collect every Gem will discover the truth their star has been trying to reveal, Your Journey begins now.",
+        "Only those who collect every Gem will discover the truth, the star that has been trying to reveal.\n"+
+         "Your Journey begins now.",
     30,110,width-60);
 
     //Show Chosen character:
@@ -123,7 +124,7 @@ function screen3(){
     fill(255);
     textFont("DM Serif Display");
     textSize(28);
-    text("Preface", width / 2 , 60);    
+    text("Preface", 150, 60);    
 
     textAlign(LEFT);
     textSize(18);
