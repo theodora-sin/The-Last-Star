@@ -1,5 +1,5 @@
-//Global Variables 
-let screen=0 ;
+/* Global Variables */
+let screen ;
 let canvas;
 let collectedGems = [];
  
@@ -85,9 +85,20 @@ let gem4;
 //screen18
 let continueButton14;
 //screen19
-let continueButton15
+let continueButton15;
 //Screen 20 define on its js file
- 
+
+//screen 21
+let ch5;
+let continueButton21;
+//screen 22 
+let choosebutton11, choosebutton12;
+//screen 23
+let conitnueButton22;
+let gem5;
+//screen 24
+let continueButton23;
+
  
 /* PRELOAD LOADS FILES */
 function preload() {
@@ -116,6 +127,9 @@ function preload() {
   ch3 = loadImage("assets/ch3.jpg");
   ch3_1 = loadImage("assets/ch3_1.jpg");
   ch4 = loadImage("assets/ch4.jpg");
+  ch5= loadImage("assets/ch5.jpg")
+  Darkness=loadImage("assets/darkness.png");
+  ch6=loadImage("assets/ch6.jpg")
 }
  
  
@@ -197,5 +211,13 @@ function draw() {
     } else {
       playSnake4()
     }
+  }else if(screen==21){
+    chapter5();
+  }else if (screen==22){
+    monologue();
+  }else if(screen==23){
+    transtionscreen9();
+  }else if (screen==24){
+    transtionscreen10();
   }
 }
