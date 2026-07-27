@@ -144,7 +144,7 @@ function preload() {
   ch5= loadImage("assets/ch5.jpg");
   Darkness=loadImage("assets/Darkness.png");
   ch6=loadImage("assets/ch6.jpg");
-  ch6_1= loadImage("assets/ch6_1/jpg")
+  ch6_1= loadImage("assets/ch6_1.jpg")
 }
  
  
