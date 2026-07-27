@@ -5,7 +5,7 @@ function startscreen(){
     textAlign(CENTER);
     textFont("DMSerifDisplay");
     textSize(32);
-    text("The Last Star");
+    text("The Last Star",30,height/2-60);
     textSize(20);
     text("Click start button to start the game!", 30, height/2 + 70, width - 60);
 
