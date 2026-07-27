@@ -99,6 +99,18 @@ function updateFoodPosition4() {
   foodX = Math.floor(Math.random() * GRID_COLS4);
   foodY = Math.floor(Math.random() * GRID_ROWS4);
 }
+
+function handleDirectionalInput4() {
+  if (upButton4 && upButton4.mouse.presses() && velocityY !== 1) {
+    velocityX = 0; velocityY = -1;
+  } else if (downButton4 && downButton4.mouse.presses() && velocityY !== -1) {
+    velocityX = 0; velocityY = 1;
+  } else if (leftButton4 && leftButton4.mouse.presses() && velocityX !== 1) {
+    velocityX = -1; velocityY = 0;
+  } else if (rightButton4 && rightButton4.mouse.presses() && velocityX !== -1) {
+    velocityX = 1; velocityY = 0;
+  }
+}
 function playSnake4(){
     background(20,20,30);
     //food
