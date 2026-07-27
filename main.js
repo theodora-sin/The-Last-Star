@@ -127,9 +127,9 @@ function preload() {
   ch3 = loadImage("assets/ch3.jpg");
   ch3_1 = loadImage("assets/ch3_1.jpg");
   ch4 = loadImage("assets/ch4.jpg");
-  ch5= loadImage("assets/ch5.jpg")
+  ch5= loadImage("assets/ch5.jpg");
   Darkness=loadImage("assets/Darkness.png");
-  ch6=loadImage("assets/ch6.jpg")
+  ch6=loadImage("assets/ch6.jpg");
 }
  
  
