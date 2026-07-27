@@ -8,8 +8,11 @@ function chapter2() {
     text("After collecting all 3 safe food, " + character_name + " steps out of the cave into the open dark.\n" +
         "The sky has no stars except a faint golden light flickers in the distance,\n" +
         character_name + " you believe it is one of the scattered gem pieces.\n"+
-        "What path do you take"
+        "Which path do you take"
         , 30, 140, width - 60);
+    if (playerCharacter) {
+        image(playerCharacter, width / 2-50, 400,100, 150);
+    }    
 
     if(!choosebutton5){
         choosebutton5=new Sprite(width/2, height-140, 200,50);
@@ -61,7 +64,7 @@ function chapter2_longpath() {
     }
 
     if (gem2) {
-        image(gem2, width / 2,350, 50, 50);
+        image(gem2, width / 2,380, 50, 50);
     }
 
     if (!continueButton5) {
@@ -89,7 +92,7 @@ function chapter2_shortcut() {
     textAlign(LEFT);
     textSize(23);
     textFont("Arial");
-    text("At first, it seems faster, but when you slowly walk pass, the light become unstable, drifting and dimming as the Darkness is closer to the gem and try to snuff all the hope out before player can reach it.",30,187,width -60);
+    text("At first, it seems faster, but when you slowly walk pass, the light become unstable, drifting and dimming as the Darkness is closer to the gem and try to snuff all the hope out before you can reach it.",30,187,width -60);
 
     if (playerCharacter) {
         image(playerCharacter, 50, height - 200, 100, 150);
