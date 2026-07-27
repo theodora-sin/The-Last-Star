@@ -3,8 +3,8 @@ const GRID_ROWS4 =40;
 const MOVE_INTERVAL4=100;
 const TARGET_SCORE4=10;
 
-let SnakeGameStarted = false;
 let CELL_SIZE4;
+let SnakeGameStarted=false;
 let gameOver4 = false;
 let gameWon4=false;
 let foodX, foodY;
@@ -15,6 +15,8 @@ let lastMoveTime4=0;
 let score4=0;
 let highScore4=0;
 let continueButton16,continueButton17;
+let upButton4,downButton4, leftButton4,rightButton4
+
 
 function introScreen4(){
     image(ch4,0,0,width,height);
@@ -41,6 +43,42 @@ function introScreen4(){
     continueButton16 = null;
     initializeSnake4();
     SnakeGameStarted = true;
+}
+function createDirectionalControls4(){
+  if(upButton4)upButton4.remove();
+  if(downButton4)downButton4.remove();
+  if(leftButton4)leftButton4.remove();
+  if(rightButton4)rightButton4.remove();
+
+  const padCenterX=width/2;
+  const padCenterY = height-90;
+  const btnSize=50;
+  const gap =55;
+
+  upButton4 = new Sprite(padCenterX, padCenterY - gap, btnSize, btnSize);
+  upButton4.shapeColor = color(255, 255, 255, 110);
+  upButton4.text = "▲";
+  upButton4.textColor = color(255, 255, 255, 200);
+  upButton4.collider = "static";
+ 
+  downButton4 = new Sprite(padCenterX, padCenterY + gap, btnSize, btnSize);
+  downButton4.shapeColor = color(255, 255, 255, 110);
+  downButton4.text = "▼";
+  downButton4.textColor = color(255, 255, 255, 200);
+  downButton4.collider = "static";
+ 
+  leftButton4 = new Sprite(padCenterX - gap, padCenterY, btnSize, btnSize);
+  leftButton4.shapeColor = color(255, 255, 255, 110);
+  leftButton4.text = "◀";
+  leftButton4.textColor = color(255, 255, 255, 200);
+  leftButton4.collider = "static";
+ 
+  rightButton4 = new Sprite(padCenterX + gap, padCenterY, btnSize, btnSize);
+  rightButton4.shapeColor = color(255, 255, 255, 110);
+  rightButton4.text = "▶";
+  rightButton4.textColor = color(255, 255, 255, 200);
+  rightButton4.collider = "static";  
+
 }
 }
 function initializeSnake4(){
@@ -112,10 +150,11 @@ function playSnake4(){
   textSize(16);
   text(`Score: ${score4}`, 10, 10);
   text(`High Score: ${highScore4}`, 10, 32);
+  handleDirectionalInput4();
 }
 
 function keyPressed() {
-  if (screen !== 20|| !SnakeGameStarted|| gameOver4) return;
+  if (screen !== 20|| !SnakeGameStarted || gameOver4) return;
  
   if (keyCode === UP_ARROW && velocityY !== 1) {
     velocityX = 0; velocityY = -1;
@@ -131,6 +170,11 @@ function keyPressed() {
 function endSnake4(won){
     gameOver4=true;
     gameWon4=won;
+
+    if (upButton4){upButton4.remove(); upButton4=null;}
+    if(downButton4){downButton4.remove(); downButton4 =null;}
+    if(leftButton4){leftButton4.remove(); leftButton4 = null;}
+    if(rightButton4){rightButton4.remove(); rightButton4 =null;}
 }
 
 function drawSnakeEndScreen4() {
@@ -148,7 +192,7 @@ function drawSnakeEndScreen4() {
  
   if (!continueButton17) {
     continueButton17 = new Sprite(width / 2, height / 2 + 60, 140, 48);
-    continueButton17.shapeColor = color(snakeWon4 ? "green" : "blue");
+    continueButton17.shapeColor = color(gameWon4 ? "green" : "blue");
     continueButton17.text = "Continue";
     continueButton17.textColor = "white";
     continueButton17.collider = "static";
