@@ -1,14 +1,15 @@
 //cafe intro
 function chapter1(){
-    image(ch1,0,0,width,height);//forest
+    image(ch3,0,0,width,height);//forest
     fill(255);
     textAlign(LEFT);
     textSize(17);
     textFont("Arial");
     text(character_name+" awaken in an endless forest where the whole world is dark.\n"+
         character_name+" had a dim light lit the road, suddenly a voice talking and say:\n"+
-        "The darkness know you are here, he is searchng for you-- run!!!",
-    30,140,width-60);
+        "The darkness know you are here, he is searchng for you-- run!!!\n"+
+        "Are you going to ignore the inner voice or are you trying to escape?",
+        30,140,width-60);
     
 
     if(playerCharacter){
@@ -66,7 +67,7 @@ function transtionscreen1() {
     }
 
     if (gem1) {
-        image(gem1, width / 2,350, 50, 50);
+        image(gem1, width / 2,370, 50, 50);
     }
 
     if (!continueButton1) {
@@ -88,13 +89,14 @@ function transtionscreen1() {
     }
 }
 
+
 function transtionscreen2() {
     image(ch1,0,0,width,height);//forest
     fill(255);
     textAlign(LEFT);
     textSize(23);
     textFont("Arial");
-    text("People are shouting, and you realise it wasn't a hallucination.",30,187,width -60);
+    text("People are shouting your name, running as fast as they can, and you realise it wasn't a hallucination.",30,187,width -60);
 
     if (playerCharacter) {
         image(playerCharacter, 50, height - 200, 100, 150);
