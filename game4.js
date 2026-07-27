@@ -27,7 +27,7 @@ function introScreen4(){
     text("Use the arrow keys to move.\n"+
         "Eat the glowing food to grow and score points.\n"+
         "Reach 10 points to win--but don't hit the walls or yourself.",
-        width/2,150,width-60);
+        30,150,width-60);
     if (!continueButton16){
         continueButton16=new Sprite (width/2,height/2+140,120,44);
         continueButton16.shapeColor=color("blue");
