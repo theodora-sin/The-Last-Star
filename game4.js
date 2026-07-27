@@ -1,105 +1,113 @@
-const GRID_COLS4 =20;
-const GRID_ROWS4 =40;
-const MOVE_INTERVAL4=100;
-const TARGET_SCORE4=10;
-
+const GRID_COLS4 = 20;
+const GRID_ROWS4 = 40;
+const MOVE_INTERVAL4 = 100;
+const TARGET_SCORE4 = 10;
+ 
 let CELL_SIZE4;
-let SnakeGameStarted=false;
+let SnakeGameStarted = false;
 let gameOver4 = false;
-let gameWon4=false;
+let gameWon4 = false;
 let foodX, foodY;
 let snakeX, snakeY;
-let velocityX=0,velocityY=0;
-let snakeBody=[];
-let lastMoveTime4=0;
-let score4=0;
-let highScore4=0;
-let continueButton16,continueButton17;
-let upButton4,downButton4, leftButton4,rightButton4
-
-
-function introScreen4(){
-    image(ch4,0,0,width,height);
-    fill(255);
-    textAlign(CENTER);
-    textSize(26);
-    text("Snake Game", width/2,100);
-
-    textSize(16);
-    text("Use the arrow keys to move.\n"+
-        "Eat the glowing food to grow and score points.\n"+
-        "Reach 10 points to win--but don't hit the walls or yourself.",
-        30,150,width-60);
-    if (!continueButton16){
-        continueButton16=new Sprite (width/2,height/2+140,120,44);
-        continueButton16.shapeColor=color("blue");
-        continueButton16.text="Start"
-        continueButton16.textColor="white";
-        continueButton16.collider="static";
-    }
-
-    if (continueButton16.mouse.presses()) {
+let velocityX = 0, velocityY = 0;
+let snakeBody = [];
+let lastMoveTime4 = 0;
+let score4 = 0;
+let highScore4 = 0;
+let continueButton16, continueButton17;
+let upButton4, downButton4, leftButton4, rightButton4;
+ 
+function introScreen4() {
+  image(ch4, 0, 0, width, height);
+  fill(255);
+  textAlign(CENTER);
+  textSize(26);
+  text("Snake Game", width / 2, 100);
+ 
+  textSize(16);
+  text(
+    "Use the arrow keys, or the on-screen buttons, to move.\n" +
+    "Eat the glowing food to grow and score points.\n" +
+    `Reach ${TARGET_SCORE4} points to win — but don't hit the walls or yourself.`,
+    30, 150, width - 60
+  );
+  if (!continueButton16) {
+    continueButton16 = new Sprite(width / 2, height / 2 + 140, 120, 44);
+    continueButton16.shapeColor = color("blue");
+    continueButton16.text = "Start"
+    continueButton16.textColor = "white";
+    continueButton16.collider = "static";
+  }
+ 
+  if (continueButton16.mouse.presses()) {
     continueButton16.remove();
     continueButton16 = null;
     initializeSnake4();
     SnakeGameStarted = true;
-}
-function createDirectionalControls4(){
-  if(upButton4)upButton4.remove();
-  if(downButton4)downButton4.remove();
-  if(leftButton4)leftButton4.remove();
-  if(rightButton4)rightButton4.remove();
-
-  const padCenterX=width/2;
-  const padCenterY = height-90;
-  const btnSize=50;
-  const gap =55;
-
+  }
+} 
+ 
+function createDirectionalControls4() {
+  if (upButton4) upButton4.remove();
+  if (downButton4) downButton4.remove();
+  if (leftButton4) leftButton4.remove();
+  if (rightButton4) rightButton4.remove();
+ 
+  const padCenterX = width / 2;
+  const padCenterY = height - 90;
+  const btnSize = 50;
+  const gap = 55;
+ 
   upButton4 = new Sprite(padCenterX, padCenterY - gap, btnSize, btnSize);
-  upButton4.shapeColor = color(255, 255, 255, 110);
+  upButton4.shapeColor = color('#341539');
   upButton4.text = "▲";
-  upButton4.textColor = color(255, 255, 255, 200);
+  upButton4.textSize = 24;
+  upButton4.textColor = "white";
   upButton4.collider = "static";
  
   downButton4 = new Sprite(padCenterX, padCenterY + gap, btnSize, btnSize);
-  downButton4.shapeColor = color(255, 255, 255, 110);
+  downButton4.shapeColor = color('#341539');
   downButton4.text = "▼";
-  downButton4.textColor = color(255, 255, 255, 200);
+  downButton4.textSize = 24;
+  downButton4.textColor = "white";
   downButton4.collider = "static";
  
   leftButton4 = new Sprite(padCenterX - gap, padCenterY, btnSize, btnSize);
-  leftButton4.shapeColor = color(255, 255, 255, 110);
+  leftButton4.shapeColor = color('#341539');
   leftButton4.text = "◀";
-  leftButton4.textColor = color(255, 255, 255, 200);
+  leftButton4.textSize = 24;
+  leftButton4.textColor = "white";
   leftButton4.collider = "static";
  
   rightButton4 = new Sprite(padCenterX + gap, padCenterY, btnSize, btnSize);
-  rightButton4.shapeColor = color(255, 255, 255, 110);
+  rightButton4.shapeColor = color('#341539');
   rightButton4.text = "▶";
-  rightButton4.textColor = color(255, 255, 255, 200);
-  rightButton4.collider = "static";  
-
+  rightButton4.textSize = 24;
+  rightButton4.textColor = "white";
+  rightButton4.collider = "static";
 }
+ 
+function initializeSnake4() {
+  CELL_SIZE4 = width / GRID_COLS4;
+  snakeX = Math.floor(GRID_COLS4 / 2);
+  snakeY = Math.floor(GRID_ROWS4 / 2);
+  velocityX = 0;
+  velocityY = 0;
+  snakeBody = [[snakeX, snakeY]];
+  score4 = 0;
+  gameOver4 = false;
+  gameWon4 = false;
+  lastMoveTime4 = millis();
+ 
+  updateFoodPosition4();
+  createDirectionalControls4(); 
 }
-function initializeSnake4(){
-    CELL_SIZE4=width/GRID_COLS4;
-    snakeX=Math.floor(GRID_COLS4/2);
-    snakeY=Math.floor(GRID_ROWS4/2);
-    velocityX=0;
-    velocityY=0;
-    snakeBody= [[snakeX, snakeY]];
-    score4 = 0;
-    gameOver4 = false;
-    gameWon4 = false;
-    lastMoveTime4 = millis();
-    
-    updateFoodPosition4();
-}
+ 
 function updateFoodPosition4() {
   foodX = Math.floor(Math.random() * GRID_COLS4);
   foodY = Math.floor(Math.random() * GRID_ROWS4);
 }
-
+ 
 function handleDirectionalInput4() {
   if (upButton4 && upButton4.mouse.presses() && velocityY !== 1) {
     velocityX = 0; velocityY = -1;
@@ -111,13 +119,13 @@ function handleDirectionalInput4() {
     velocityX = 1; velocityY = 0;
   }
 }
-
-function playSnake4(){
-    background(20,20,30);
-    //food
-    fill(255,200,0);
-    rect(foodX * CELL_SIZE4, foodY * CELL_SIZE4, CELL_SIZE4, CELL_SIZE4);    
-
+ 
+function playSnake4() {
+  background(20, 20, 30);
+  //food
+  fill(255, 200, 0);
+  rect(foodX * CELL_SIZE4, foodY * CELL_SIZE4, CELL_SIZE4, CELL_SIZE4);
+ 
   if (millis() - lastMoveTime4 >= MOVE_INTERVAL4) {
     lastMoveTime4 = millis();
  
@@ -165,42 +173,42 @@ function playSnake4(){
   text(`High Score: ${highScore4}`, 10, 32);
   handleDirectionalInput4();
 }
-
+ 
 function keyPressed() {
-  if (screen !== 20|| !SnakeGameStarted || gameOver4) return;
+  if (screen !== 20 || !SnakeGameStarted || gameOver4) return;
  
   if (keyCode === UP_ARROW && velocityY !== 1) {
     velocityX = 0; velocityY = -1;
   } else if (keyCode === DOWN_ARROW && velocityY !== -1) {
     velocityX = 0; velocityY = 1;
   } else if (keyCode === LEFT_ARROW && velocityX !== 1) {
-    velocityX= -1; velocityY = 0;
+    velocityX = -1; velocityY = 0;
   } else if (keyCode === RIGHT_ARROW && velocityX !== -1) {
     velocityX = 1; velocityY = 0;
   }
 }
-
-function endSnake4(won){
-    gameOver4=true;
-    gameWon4=won;
-
-    if (upButton4){upButton4.remove(); upButton4=null;}
-    if(downButton4){downButton4.remove(); downButton4 =null;}
-    if(leftButton4){leftButton4.remove(); leftButton4 = null;}
-    if(rightButton4){rightButton4.remove(); rightButton4 =null;}
+ 
+function endSnake4(won) {
+  gameOver4 = true;
+  gameWon4 = won;
+ 
+  if (upButton4) { upButton4.remove(); upButton4 = null; }
+  if (downButton4) { downButton4.remove(); downButton4 = null; }
+  if (leftButton4) { leftButton4.remove(); leftButton4 = null; }
+  if (rightButton4) { rightButton4.remove(); rightButton4 = null; }
 }
-
+ 
 function drawSnakeEndScreen4() {
   background(20, 20, 30);
   fill(255);
   textAlign(CENTER, CENTER);
   textSize(22);
   if (gameWon4) {
-    text(`You reached ${TARGET_SCORE4} points!`, 30, height / 2 - 40, width - 60);
+    text(`You reached ${TARGET_SCORE4} points!`, width / 2, height / 2 - 40, width - 60); // was "30" instead of "width / 2" — textAlign(CENTER) needs the box's x to actually be the center for the text to look centered
   } else {
-    text("Game Over", 30, height / 2 - 60);
+    text("Game Over", width / 2, height / 2 - 60);
     textSize(16);
-    text(`Final Score: ${score4}`, 30, height / 2 - 20);
+    text(`Final Score: ${score4}`, width / 2, height / 2 - 20);
   }
  
   if (!continueButton17) {
@@ -214,8 +222,8 @@ function drawSnakeEndScreen4() {
   if (continueButton17.mouse.presses()) {
     continueButton17.remove();
     continueButton17 = null;
-    Started4 = false;
+    SnakeGameStarted = false; 
     gameOver4 = false;
-    screen=21
-     }
+    screen = 21;
+  }
 }
