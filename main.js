@@ -241,7 +241,7 @@ function draw() {
     hiddenmessage()
   }else if(screen==27){
     goodending();
-  }else if(screen=28){
+  }else if(screen==28){
     badending();
   }
 }
