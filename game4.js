@@ -115,7 +115,7 @@ function playSnake4(){
 }
 
 function keyPressed() {
-  if (screen !== 20|| !Started4 || gameOver4) return;
+  if (screen !== 20|| !SnakeGameStarted|| gameOver4) return;
  
   if (keyCode === UP_ARROW && velocityY !== 1) {
     velocityX = 0; velocityY = -1;
