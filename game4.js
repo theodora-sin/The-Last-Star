@@ -40,7 +40,7 @@ function introScreen4(){
     continueButton16.remove();
     continueButton16 = null;
     initializeSnake4();
-    Started4 = true;
+    SnakeGameStarted = true;
 }
 }
 function initializeSnake4(){
