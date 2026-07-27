@@ -1,5 +1,5 @@
 function chapter3(){
-    image(ch3,0,0,width,height);
+    image(mini2,0,0,width,height);
     fill(255);
     textAlign(LEFT);
     textSize(17);
@@ -56,7 +56,7 @@ function conversation(){
     textSize(17);
     text(conversationLines[dialogueIndex].line, 35, 515, 330, 80);
 
-    const isLastLine= dialogueIndex >= conversationLines.length - 1;
+    const isLastLine=dialogueIndex >= conversationLines.length - 1;
   if (!isLastLine) {
     if(!dialogueContinueButton){
         dialogueContinueButton= new Sprite(width/2, 645,160,44);
@@ -120,11 +120,11 @@ function transtionscreen5() {
     textStyle(NORMAL);
 
     if (playerCharacter) {
-        image(playerCharacter, width / 2-50, 280,100, 150);
+        image(playerCharacter, width / 2-50, 200,100, 150);
     }
 
     if (gem3) {
-        image(gem3, width / 2,350, 50, 50);
+        image(gem3, width / 2,380, 50, 50);
     }
 
     if (!continueButton10) {
