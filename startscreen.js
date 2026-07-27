@@ -3,8 +3,10 @@ function startscreen(){
     image(startBg,0,0,width, height);//dark background
     fill(255);
     textAlign(CENTER);
-    textSize(20);
     textFont("DMSerifDisplay");
+    textSize(32);
+    text("The Last Star");
+    textSize(20);
     text("Click start button to start the game!", 30, height/2 + 70, width - 60);
 
     //Create the start button:
