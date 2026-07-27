@@ -111,6 +111,7 @@ function handleDirectionalInput4() {
     velocityX = 1; velocityY = 0;
   }
 }
+
 function playSnake4(){
     background(20,20,30);
     //food
@@ -195,11 +196,11 @@ function drawSnakeEndScreen4() {
   textAlign(CENTER, CENTER);
   textSize(22);
   if (gameWon4) {
-    text(`You reached ${TARGET_SCORE4} points!`, width / 2, height / 2 - 40, width - 60);
+    text(`You reached ${TARGET_SCORE4} points!`, 30, height / 2 - 40, width - 60);
   } else {
-    text("Game Over", width / 2, height / 2 - 60);
+    text("Game Over", 30, height / 2 - 60);
     textSize(16);
-    text(`Final Score: ${score4}`, width / 2, height / 2 - 20);
+    text(`Final Score: ${score4}`, 30, height / 2 - 20);
   }
  
   if (!continueButton17) {
