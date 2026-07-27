@@ -1,5 +1,5 @@
 /* Global Variables */
-let screen=0;
+let screen ;
 let canvas;
 let collectedGems = [];
  
@@ -99,6 +99,20 @@ let gem5;
 //screen 24
 let continueButton23;
 
+//screen25
+let ch6;
+let continueButton24;
+let Darkness;
+
+//screen 26
+let inputBox, submitButton;
+
+//screen27
+let continueButton25;
+
+//screen 28
+let ch6_1;
+let continueButton26;
  
 /* PRELOAD LOADS FILES */
 function preload() {
@@ -128,8 +142,9 @@ function preload() {
   ch3_1 = loadImage("assets/ch3_1.jpg");
   ch4 = loadImage("assets/ch4.jpg");
   ch5= loadImage("assets/ch5.jpg");
-  Darkness= loadImage("assets/Darkness.png");
+  Darkness=loadImage("assets/Darkness.png");
   ch6=loadImage("assets/ch6.jpg");
+  ch6_1= loadImage("assets/ch6_1/jpg")
 }
  
  
@@ -150,6 +165,7 @@ function windowResized() {
 }
 /*setup runs once*/
 function draw() {
+  fitCanvasToWindow();
   console.log("Drawing screen:", screen);
   if (screen == 0) {
     startscreen();
@@ -219,5 +235,13 @@ function draw() {
     transtionscreen9();
   }else if (screen==24){
     transtionscreen10();
+  }else if(screen==25){
+    chapter6();
+  }else if(screen==26){
+    hiddenmessage()
+  }else if(screen==27){
+    goodending();
+  }else if(screen=28){
+    badending();
   }
 }
