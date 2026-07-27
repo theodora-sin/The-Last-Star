@@ -98,7 +98,7 @@ function transtionscreen7(){
     }
 
     if (gem4) {
-        image(gem4, width / 2,350, 50, 50);
+        image(gem4, width / 2,380, 50, 50);
     }
 
     if (!continueButton14) {
