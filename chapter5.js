@@ -9,7 +9,7 @@ function chapter5(){
         character_name+" stop walking.",
     30,140,width-60);
     if (playerCharacter) {
-        image(playerCharacter, width / 2-50, 280,100, 150);
+        image(playerCharacter, 30, 480,100, 150);
     }
     if (!continueButton21) {
         continueButton21 = new Sprite(width / 2, height - 100, 140, 50);
@@ -29,15 +29,18 @@ function chapter5(){
 
 const monologueLines = [
     { speaker: "Voice 1", line: "Why keep going?\n"+ "The world has already fallen into darkness" },
-    { speaker: "Voice 2", line: "But you remember the people you met, the child you saved" },
+    { speaker: "Voice 2", line: "But you still remember the people you met, the child you saved" },
     { speaker: "Voice 1", line: "You could turn back, no one will blame you\n"+"Everyone already end up in despair." },
-    { speaker: "Voice 2", line: "Who will save those who still believe?"}
+    { speaker: "Voice 2", line: "Who will save those who still believe?"},
+    { speaker: "Voice 1", line: "This is your choice, you could be greedy."},
+    { speaker: "Voice 2", line: "Or you could be a hero."}
 ];
+
 function monologue(){
     image(ch5,0,0,width,height);//slient path 
     fill(255);
     noStroke();  
-    rect(20,20,width-40,700,12); 
+    rect(20,20,width-40,550,12); 
 
     let y=55;
 
@@ -53,25 +56,25 @@ function monologue(){
 
     fill(0);
     textSize(16);
-    text(entry.line, 35, y + 22, 320, 80);
+    text(entry.line, 35, y + 15, 320, 80);
     y+=110;
     }
 
     fill(255);
     textSize(15);
-    text("What fo you do?,35,610")
+    text("What do you do?,35,610")
 
     if (!choosebutton11) {
-        choosebutton11 = new Sprite(width / 2, 700, 340, 50);
+        choosebutton11 = new Sprite(width / 2, 700, 250, 50);
         choosebutton11.shapeColor = color("#7D7098");
         choosebutton11.text = "Continue walking";
-        choosebutton11.textSize = 14;
+        choosebutton11.textSize = 18;
         choosebutton11.textColor = "white";
 
-        choosebutton12 = new Sprite(width / 2 ,755, 340, 50);
+        choosebutton12 = new Sprite(width / 2 ,755, 250, 50);
         choosebutton12.shapeColor = color("#709398");
         choosebutton12.text = "Return";
-        choosebutton12.textSize = 14;
+        choosebutton12.textSize = 18;
         choosebutton12.textColor = "white";
         }
 
@@ -109,11 +112,11 @@ function transtionscreen9() {
     textStyle(NORMAL);
 
     if (playerCharacter) {
-        image(playerCharacter, width / 2-50, 480,100, 150);
+        image(playerCharacter, width / 2-50, 280,100, 150);
     }
 
     if (gem5) {
-        image(gem5, width / 2,350, 50, 50);
+        image(gem5, width / 2,380, 50, 50);
     }
 
     if (!continueButton22) {
