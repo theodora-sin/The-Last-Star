@@ -141,6 +141,12 @@ function displayGemsWithWords() {
   const startY=100;
 
   for (let i = 0; i < collectedGems.length; i++) {
+    const col = i % perRow;
+    const row = Math.floor(i/perRow);
+    const x = startX + col* colSpacing;
+    const y = startY + row * rowSpacing;
+    
+  for (let i = 0; i < collectedGems.length; i++) {
     // Display gem
     image(collectedGems[i], x, y, 50, 50);
 
