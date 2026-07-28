@@ -118,6 +118,9 @@ let continueButton26;
 let end;
 let continueButton27;
  
+//music
+let bgm
+
 /* PRELOAD LOADS FILES */
 function preload() {
   charImg1 = loadImage("assets/max.png");
@@ -150,6 +153,7 @@ function preload() {
   ch6=loadImage("assets/ch6.jpg");
   ch6_1=loadImage("assets/ch6_1.jpg");
   end=loadImage("assets/end.jpg");
+  bgm=loadSound("bgm.mp3");
 }
  
  
@@ -167,6 +171,13 @@ function fitCanvasToWindow() {
  
 function windowResized() {
   fitCanvasToWindow();
+}
+function startMusic(){
+  if (!isUserInteracted) {
+    bgm.loop();
+    bgm.setVolume(0.3);
+    isUserInteracted = true;
+  }  
 }
 /*setup runs once*/
 function draw() {
