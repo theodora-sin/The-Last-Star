@@ -107,7 +107,7 @@ function initializeSnake4() {
  
 function updateFoodPosition4() {
   foodX = Math.floor(Math.random() * GRID_COLS4);
-  foodY = Math.floor(Math.random() * GRID_ROWS4);
+  foodY = HEADER_ROWS4 + Math.floor(Math.random() * (GRID_ROWS4 - HEADER_ROWS4));
 }
  
 function handleDirectionalInput4() {
