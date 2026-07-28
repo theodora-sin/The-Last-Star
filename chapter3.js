@@ -112,11 +112,14 @@ function transtionscreen5() {
     image(ch3_1,0,0,width,height);
 
     fill(255);
-    textAlign(CENTER);
+    textAlign(LEFT);
     textStyle(BOLD);
     textSize(21);
     textFont("Nunito");
-    text("You earn a gem!", width / 2, 240);
+    text("Even in the darkest moments, you continue to find hope.\n" +
+     "Your smile inspires others to keep believing in the light within themselves.",
+    30,130,width-60)
+    text("You earn a gem!",150, 380);
     textStyle(NORMAL);
 
     if (playerCharacter) {
