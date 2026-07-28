@@ -11,7 +11,7 @@ function chapter6(){
 
     if (playerCharacter){
         image(playerCharacter, 30, height-380,110,160);
-        image(Darkness, 250, height-380,100,160);
+        image(Darkness, 250, height-500,100,160);
     }
     if (!continueButton24) {
         continueButton24 = new Sprite(width / 2, height - 100, 140, 50);
@@ -49,9 +49,9 @@ function getWordSlots(){
 
 function drawWordSlots(){
     const slots=getWordSlots();
-    const slotsSize=36;
+    const slotSize=36;
     const gap =8;
-    const totalWidth=slots.length * slotSize *(slots.length-1)*gap;
+    const totalWidth=slots.length * slotSize +(slots.length-1)*gap;
     const startX= width/2 - totalWidth/2;
     const y=200;
 
@@ -68,6 +68,19 @@ function drawWordSlots(){
     }
 
 }
+function canvasToPageRect(x,y,w,h){
+    const rect=canvas.elt.getBoundingClientRect();
+    const scaleX=rect.width/width;
+    const scaleY= rect.height/height;
+    return{
+        x: rect.left + x * scaleX,
+        y: rect.top+ y * scaleY,
+        w: w * scaleX,
+        h: h * scaleY
+    };
+}
+
+
 
 
 function hiddenmessage(){
@@ -104,7 +117,7 @@ function checkHiddenMessage() {
     inputBox.remove();  
     submitButton.remove();
     inputBox=null;
-    submitButoon=null;
+    submitButton=null;
     wrongGuessMessage="";
     if(guess===SECRET_WORD){
         screen=27
@@ -119,6 +132,12 @@ function displayGemsWithWords() {
   textSize(14);
   text("Your Collected Gems & Words:", 20, 80);
 
+  const perRow=3;
+  const colSpacing=110;
+  const rowSpacing=90;
+  const startX=20;
+  const startY=100;
+
   for (let i = 0; i < collectedGems.length; i++) {
     // Display gem
     image(collectedGems[i], 20 + i * 120, 100, 50, 50);
@@ -126,7 +145,7 @@ function displayGemsWithWords() {
     // Display corresponding word below gem
     let word = getGemWord(collectedGems[i]);
     if (word) {
-      fill:(255); 
+      fill(255); 
       textAlign(CENTER);
       textSize(12);
       text(`"${word}"`, 45 + i * 120, 170);
@@ -173,7 +192,7 @@ function badending(){
         continueButton26.shapeColor = color('#341539');
         continueButton26.text = "Continue";
         continueButton26.textSize = 20;
-        continueButton265.textColor = "white";
+        continueButton26.textColor = "white";
     }
 
     if (continueButton26 && continueButton26.mouse.presses()) {
