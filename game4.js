@@ -1,5 +1,5 @@
 const GRID_COLS4 = 20;
-const GRID_ROWS4 = 40;
+const GRID_ROWS4 = 30;
 const MOVE_INTERVAL4 = 100;
 const TARGET_SCORE4 = 10;
  
