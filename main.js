@@ -1,5 +1,5 @@
 /* Global Variables */
-let screen ;
+let screen=0;
 let canvas;
 let collectedGems = [];
  
