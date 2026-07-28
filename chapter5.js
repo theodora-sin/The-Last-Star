@@ -93,9 +93,9 @@ function monologue(){
     y+=22 + estimateWrappedLines(entry.line,wrapWidth) * lineHeight +20;
     }
 
-    fill(0);
-    textSize(18);
-    text("What do you do?",35, y+10)
+    fill(255);
+    textSize(22);
+    text("What do you do?",35, 580)
 
     if (!choosebutton11) {
         choosebutton11 = new Sprite(width / 2, 700, 250, 50);
