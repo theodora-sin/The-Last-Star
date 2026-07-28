@@ -37,15 +37,15 @@ const monologueLines = [
 ];
 
 function estimateWrappedLines(str,wrapWidth){
-    const pargraphs =str.split("\n");
+    const paragraphs =str.split("\n");
     let totalLines=0;
     for(const para of paragraphs){
-        const words= para.split("");
+        const words= para.split(" ");
         let currentLine="";
         let linesForPara =1;
         for(const word of words){
             const testLine = currentLine ? currentLine + ' ' + word : word;
-            if(textwidth(testLine)>wrapWidth){
+            if(textWidth(testLine)>wrapWidth){
                 linesForPara++;
                 currentLine=word;
             }else{
@@ -92,7 +92,7 @@ function monologue(){
 
     fill(255);
     textSize(15);
-    text("What do you do?,35, y+10")
+    text("What do you do?",35, y+10)
 
     if (!choosebutton11) {
         choosebutton11 = new Sprite(width / 2, 700, 250, 50);
