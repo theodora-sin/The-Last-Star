@@ -205,7 +205,7 @@ function endGame2(won){
 function drawEndScreen2(){
     push();
     fill(255);
-    textAlign(CENTER);
+    textAlign(LEFT);
     if (gameWon2) {
         textSize(22);
         text("You Win!\n Final Score: "+score2
