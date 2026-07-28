@@ -134,7 +134,7 @@ function transtionscreen9() {
     textFont("Arial");
     text("The path is frightening, the future is uncertain.\n"+
         "You choose to move forward, even through the end cannot be seen.\n"+
-        "You take one final step, Darkness is waiting.", 30,200,width-60);
+        "You take one final step, Darkness is waiting.", 30,100,width-60);
 
     fill(255);
     textAlign(CENTER);
