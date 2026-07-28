@@ -95,7 +95,7 @@ function monologue(){
 
     fill(255);
     textSize(22);
-    text("What do you do?",35, 580)
+    text("What do you do?",35, 600)
 
     if (!choosebutton11) {
         choosebutton11 = new Sprite(width / 2, 700, 250, 50);
