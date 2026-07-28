@@ -1,6 +1,6 @@
 const GRID_COLS4 = 20;
 const GRID_ROWS4 = 30;
-const HEADER_ROWS4 =3
+const HEADER_ROWS4 =4;
 const MOVE_INTERVAL4 = 100;
 const TARGET_SCORE4 = 10;
  
@@ -179,7 +179,6 @@ function playSnake4() {
   textAlign(LEFT, TOP);
   textSize(16);
   text(`Score: ${score4}`, 10, 10);
-  text(`High Score: ${highScore4}`, 10, 32);
   handleDirectionalInput4();
 }
  
@@ -213,11 +212,11 @@ function drawSnakeEndScreen4() {
   textAlign(CENTER, CENTER);
   textSize(22);
   if (gameWon4) {
-    text(`You reached ${TARGET_SCORE4} points!`, width / 2, height / 2 - 40, width - 60); // was "30" instead of "width / 2" — textAlign(CENTER) needs the box's x to actually be the center for the text to look centered
+    text(`You reached ${TARGET_SCORE4} points!`, 60, height / 2 - 40, width - 60); // was "30" instead of "width / 2" — textAlign(CENTER) needs the box's x to actually be the center for the text to look centered
   } else {
     text("Game Over", width / 2, height / 2 - 60);
     textSize(16);
-    text(`Final Score: ${score4}`, width / 2, height / 2 - 20);
+    text(`Final Score: ${score4}`, 60, height / 2 - 20);
   }
  
   if (!continueButton17) {
