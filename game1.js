@@ -248,7 +248,7 @@ function drawMazeEndScreen() {
     image(mini1,0,0,width,height);
     push();
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(LEFT);
 
     if (mazeWon) {
         textSize(22);
