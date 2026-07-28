@@ -1,5 +1,6 @@
 const GRID_COLS4 = 20;
 const GRID_ROWS4 = 30;
+const HEADER_ROWS4 =3
 const MOVE_INTERVAL4 = 100;
 const TARGET_SCORE4 = 10;
  
@@ -20,11 +21,12 @@ let upButton4, downButton4, leftButton4, rightButton4;
 function introScreen4() {
   image(ch4, 0, 0, width, height);
   fill(255);
-  textAlign(LEFT);
+  textAlign(CENTER);
   textSize(26);
   text("Snake Game", width / 2, 100);
  
   textSize(16);
+  textAlign(LEFT);
   text(
     "Use the arrow keys, or the on-screen buttons, to move.\n" +
     "Eat the glowing food to grow and score points.\n" +
@@ -122,8 +124,14 @@ function handleDirectionalInput4() {
  
 function playSnake4() {
   background(20, 20, 30);
+
+  stroke(255,60);
+  line(0,HEADER_ROWS4 * CELL_SIZE4, width, HEADER_ROWS4 * CELL_SIZE4);
+  line(0,GRID_ROWS4 * CELL_SIZE4, width, GRID_ROWS4 * CELL_SIZE4);
+  noStroke();
+
   //food
- stroke(250,60);
+  stroke(255,60);
   fill(255, 200, 0);
   rect(foodX * CELL_SIZE4, foodY * CELL_SIZE4, CELL_SIZE4, CELL_SIZE4);
  
