@@ -30,10 +30,10 @@ function chapter6(){
 
 function getGemWord(gemImage) {
   if (gemImage === gem1) return "D";
-  if (gemImage === gem2) return "y";
-  if (gemImage === gem3) return "e";
-  if (gemImage === gem4) return "i";
-  if (gemImage === gem5) return "s";
+  if (gemImage === gem2) return "Y";
+  if (gemImage === gem3) return "E";
+  if (gemImage === gem4) return "I";
+  if (gemImage === gem5) return "S";
   return "";
 }
 
@@ -113,7 +113,9 @@ function hiddenmessage(){
 }
 
 function checkHiddenMessage() {
-  const guess = inputBox.value().trim().toUpperCase();
+    const rawValue=inputBox.value();
+    const guess = inputBox.value().trim().toUpperCase();
+    console.log("Raw input:", JSON.stringify(rawValue), "| Normalized guess:", JSON.stringify(guess), "| Expected:", JSON.stringify(SECRET_WORD), "| Match:", guess === SECRET_WORD);
     inputBox.remove();  
     submitButton.remove();
     inputBox=null;
@@ -140,7 +142,7 @@ function displayGemsWithWords() {
 
   for (let i = 0; i < collectedGems.length; i++) {
     // Display gem
-    image(collectedGems[i], 20 + i * 120, 100, 50, 50);
+    image(collectedGems[i], x, y, 50, 50);
 
     // Display corresponding word below gem
     let word = getGemWord(collectedGems[i]);
@@ -148,7 +150,7 @@ function displayGemsWithWords() {
       fill(255); 
       textAlign(CENTER);
       textSize(12);
-      text(`"${word}"`, 45 + i * 120, 170);
+      text(`"${word}"`, x+25,y+70);
     }
   }
 }
