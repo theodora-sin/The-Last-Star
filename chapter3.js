@@ -123,11 +123,11 @@ function transtionscreen5() {
     textStyle(NORMAL);
 
     if (playerCharacter) {
-        image(playerCharacter, width / 2-50, 280,100, 150);
+        image(playerCharacter, width / 2-50, 420,100, 150);
     }
 
     if (gem3) {
-        image(gem3, width / 2,380, 50, 50);
+        image(gem3, width / 2,520, 50, 50);
     }
 
     if (!continueButton10) {
