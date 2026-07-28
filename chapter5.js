@@ -61,7 +61,9 @@ function monologue(){
     image(ch5,0,0,width,height);//slient path 
     const wrapWidth=320;
     const lineHeight=20;
+    const entryGap=30;
 
+    textFont("Arial");
     textSize(16);
     let contentHeight=0;
     for (const entry of monologueLines) {
@@ -70,14 +72,14 @@ function monologue(){
 
     fill(255);
     noStroke();  
-    rect(20,20,width-40,550,12); 
+    rect(20,20,width-40,contentHeight+30,12); 
 
     let y=55;
 
     //speaker name
     for (const entry of monologueLines){
     fill("#e0c9ff");
-    textAlign(LEFT);
+    textAlign(LEFT, BASELINE);
     textFont("Arial");
     textStyle(BOLD);
     textSize(15);
@@ -86,6 +88,7 @@ function monologue(){
 
     fill(0);
     textSize(16);
+    textAlign(LEFT,TOP);
     text(entry.line, 35, y + 15, 320, 80);
     y+=22 + estimateWrappedLines(entry.line,wrapWidth) * lineHeight +20;
     }
