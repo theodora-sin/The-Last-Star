@@ -113,6 +113,10 @@ let continueButton25;
 //screen 28
 let ch6_1;
 let continueButton26;
+
+//screen29
+let end;
+let continueButton27;
  
 /* PRELOAD LOADS FILES */
 function preload() {
@@ -144,7 +148,8 @@ function preload() {
   ch5= loadImage("assets/ch5.jpg");
   Darkness=loadImage("assets/Darkness.png");
   ch6=loadImage("assets/ch6.jpg");
-  ch6_1=loadImage("assets/ch6_1.jpg")
+  ch6_1=loadImage("assets/ch6_1.jpg");
+  end=loadImage("assets/end.jpg");
 }
  
  
@@ -243,5 +248,7 @@ function draw() {
     goodending();
   }else if(screen==28){
     badending();
+  }else if(screen==29){
+    endingscreen()
   }
 }
