@@ -20,7 +20,7 @@ let upButton4, downButton4, leftButton4, rightButton4;
 function introScreen4() {
   image(ch4, 0, 0, width, height);
   fill(255);
-  textAlign(CENTER);
+  textAlign(LEFT);
   textSize(26);
   text("Snake Game", width / 2, 100);
  
