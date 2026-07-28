@@ -36,8 +36,38 @@ const monologueLines = [
     { speaker: "Voice 2", line: "Or you could be a hero."}
 ];
 
+function estimateWrappedLines(str,wrapWidth){
+    const pargraphs =str.split("\n");
+    let totalLines=0;
+    for(const para of paragraphs){
+        const words= para.split("");
+        let currentLine="";
+        let linesForPara =1;
+        for(const word of words){
+            const testLine = currentLine ? currentLine + ' ' + word : word;
+            if(textwidth(testLine)>wrapWidth){
+                linesForPara++;
+                currentLine=word;
+            }else{
+                currentLine=testLine;
+            }
+        }
+        totalLines += linesForPara;
+    }
+    return totalLines;
+}
+
 function monologue(){
     image(ch5,0,0,width,height);//slient path 
+    const wrapWidth=320;
+    const lineHeight=20;
+
+    textSize(16);
+    let contentHeight=0;
+    for (const entry of monologueLines) {
+        contentHeight += 22 + estimateWrappedLines(entry.line, wrapWidth) * lineHeight + 20;
+  }
+
     fill(255);
     noStroke();  
     rect(20,20,width-40,550,12); 
@@ -54,15 +84,15 @@ function monologue(){
     text(entry.speaker, 35,y);
     textStyle(NORMAL);
 
-    fill(0);
+    fill(255);
     textSize(16);
     text(entry.line, 35, y + 15, 320, 80);
-    y+=50;
+    y+=22 + estimateWrappedLines(entry.line,wrapWidth) * lineHeight +20;
     }
 
     fill(255);
     textSize(15);
-    text("What do you do?,35,610")
+    text("What do you do?,35, y+10")
 
     if (!choosebutton11) {
         choosebutton11 = new Sprite(width / 2, 700, 250, 50);
