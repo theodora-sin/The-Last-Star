@@ -182,6 +182,7 @@ function startMusic(){
 /*setup runs once*/
 function draw() {
   fitCanvasToWindow();
+  startMusic();
   console.log("Drawing screen:", screen);
   if (screen == 0) {
     startscreen();
