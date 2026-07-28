@@ -108,15 +108,15 @@ function transtionscreen9() {
     textStyle(BOLD);
     textSize(21);
     textFont("Nunito");
-    text("You earn a gem!", width / 2, 400);
+    text("You earn a gem!", width / 2, 300);
     textStyle(NORMAL);
 
     if (playerCharacter) {
-        image(playerCharacter, width / 2-50, 280,100, 150);
+        image(playerCharacter, width / 2-50, 380,100, 150);
     }
 
     if (gem5) {
-        image(gem5, width / 2,380, 50, 50);
+        image(gem5, width / 2,480, 50, 50);
     }
 
     if (!continueButton22) {
