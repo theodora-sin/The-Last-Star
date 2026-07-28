@@ -119,7 +119,8 @@ let end;
 let continueButton27;
  
 //music
-let bgm
+let bgm;
+let isUserInteracted=false;
 
 /* PRELOAD LOADS FILES */
 function preload() {
@@ -255,12 +256,12 @@ function draw() {
   }else if(screen==25){
     chapter6();
   }else if(screen==26){
-    hiddenmessage()
+    hiddenmessage();
   }else if(screen==27){
     goodending();
   }else if(screen==28){
     badending();
   }else if(screen==29){
-    endingscreen()
+    endingscreen();
   }
 }
