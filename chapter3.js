@@ -120,7 +120,7 @@ function transtionscreen5() {
     textStyle(NORMAL);
 
     if (playerCharacter) {
-        image(playerCharacter, width / 2-50, 200,100, 150);
+        image(playerCharacter, width / 2-50, 280,100, 150);
     }
 
     if (gem3) {
