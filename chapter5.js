@@ -84,14 +84,14 @@ function monologue(){
     text(entry.speaker, 35,y);
     textStyle(NORMAL);
 
-    fill(255);
+    fill(0);
     textSize(16);
     text(entry.line, 35, y + 15, 320, 80);
     y+=22 + estimateWrappedLines(entry.line,wrapWidth) * lineHeight +20;
     }
 
-    fill(255);
-    textSize(15);
+    fill(0);
+    textSize(18);
     text("What do you do?",35, y+10)
 
     if (!choosebutton11) {
