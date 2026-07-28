@@ -144,7 +144,7 @@ function preload() {
   ch5= loadImage("assets/ch5.jpg");
   Darkness=loadImage("assets/Darkness.png");
   ch6=loadImage("assets/ch6.jpg");
-  ch6_1= loadImage("assets/ch6_1.jpg")
+  ch6_1=loadImage("assets/ch6_1.jpg")
 }
  
  
@@ -235,5 +235,13 @@ function draw() {
     transtionscreen9();
   }else if (screen==24){
     transtionscreen10();
-}
+  }else if(screen==25){
+    chapter6();
+  }else if(screen==26){
+    hiddenmessage()
+  }else if(screen==27){
+    goodending();
+  }else if(screen==28){
+    badending();
+  }
 }
