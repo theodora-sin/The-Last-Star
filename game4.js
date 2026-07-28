@@ -123,6 +123,7 @@ function handleDirectionalInput4() {
 function playSnake4() {
   background(20, 20, 30);
   //food
+ stroke(250,60);
   fill(255, 200, 0);
   rect(foodX * CELL_SIZE4, foodY * CELL_SIZE4, CELL_SIZE4, CELL_SIZE4);
  
