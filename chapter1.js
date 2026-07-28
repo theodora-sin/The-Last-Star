@@ -1,6 +1,6 @@
 //cafe intro
 function chapter1(){
-    image(ch3,0,0,width,height);//forest
+    image(ch1,0,0,width,height);//forest
     fill(255);
     textAlign(LEFT);
     textSize(17);
