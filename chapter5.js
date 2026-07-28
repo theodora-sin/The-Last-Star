@@ -57,7 +57,7 @@ function monologue(){
     fill(0);
     textSize(16);
     text(entry.line, 35, y + 15, 320, 80);
-    y+=110;
+    y+=50;
     }
 
     fill(255);
