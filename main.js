@@ -235,13 +235,5 @@ function draw() {
     transtionscreen9();
   }else if (screen==24){
     transtionscreen10();
-  }else if(screen==25){
-    chapter6();
-  }else if(screen==26){
-    hiddenmessage()
-  }else if(screen==27){
-    goodending();
-  }else if(screen==28){
-    badending();
-  }
+}
 }
