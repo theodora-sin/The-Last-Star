@@ -26,6 +26,7 @@ function endingscreen(){
     if (continueButton27 && continueButton27.mouse.presses()) {
         continueButton27.remove();
         continueButton27 = null;
+        resetGameState();
         screen = 0;
     }
     
