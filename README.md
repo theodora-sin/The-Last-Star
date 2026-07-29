@@ -18,7 +18,7 @@ Inside every person, there is a shiny star shining through their life. As long a
 ## Built With 
 p5.js, p5play
 
-Image:
+##Image:
 startscreen: https://www.pinterest.com/pin/17381148558363785/
 ch1: https://www.pinterest.com/pin/1055599908520710/
 gem:https://www.pinterest.com/pin/11329436559255470/
@@ -30,5 +30,5 @@ ch5:https://www.pinterest.com/pin/162270392820148528/
 Darkness:https://in.pinterest.com/pin/817684876128126523/
 ch6:https://www.pinterest.com/pin/2251868559456586/
 
-AI usage declaration:
+##AI usage declaration:
 I mainly used AI to debug the code and as a learning aid throughout the development of this project. The main thing is to identify and explain the bug that I made within the code, and identify syntax and logic errors. It also assists with the layout and position for different screen sizes. Orginally, all my positions were for a canvas 600 x 600 px. It helps me to resize the image and reposition all the text messages.
