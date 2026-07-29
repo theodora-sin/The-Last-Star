@@ -80,7 +80,7 @@ function hiddenmessage(){
     textSize(20);
     textFont("Arial");
     text("Guess the hidden word with the hits provide.\n"+
-        "Hint: It is a 7-letters word",width/2,40);
+        "Hint: It is a 7-letters word",width/2,20);
     
     displayGemsWithWords();
     drawWordSlots();
