@@ -47,10 +47,6 @@ function drawWordSlots(){
 
     for(let i =0; i<SECRET_WORD.length; i++){
         const x= startX + i *(slotSize +gap);
-        stroke(255);
-        noFill();
-        rect(x,y,slotSize, slotSize,6);
-        noStroke();
         fill(255);
         textAlign(CENTER,CENTER);
         textSize(22);
