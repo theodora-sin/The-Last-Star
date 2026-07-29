@@ -1,4 +1,4 @@
-README:
+
 A thrilling story-based decision game where every choice shapes your path--and where you'll need to piece together a hidden word to unklock the true ending.
 Each person has its own beginning and an end, but no one knows when their final moment will come. 
 Every decision, every step you take are going to shape your future. 
