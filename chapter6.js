@@ -156,7 +156,7 @@ function goodending(){
     textAlign(LEFT,TOP);
     textSize(17);
     textFont("Arial");
-    text("The gems merge into the Star of Dentiny, restroing the darkness fading star."+
+    text("The gems merge into the Star of Destiny, restroing the darkness fading star."+
         "Once more and the darkness sees memories of the people whose lives were change by hope.",
         30,140,width-60);   
     if (!continueButton25) {
