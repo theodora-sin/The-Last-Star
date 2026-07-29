@@ -2,7 +2,7 @@ const SECRET_WORD = "DESTINY";
 function Chapter6(){
     image(ch6, 0,0,width,height);//
     fill(255);
-    textAlign(LEFT);
+    textAlign(LEFT,TOP);
     textSize(17);
     textFont("Arial");
     text(character_name+" finally reach the statue where the gem orginally placed."+
@@ -37,18 +37,8 @@ function getGemWord(gemImage) {
   return "";
 }
 
-function getWordSlots(){
-    const slots=new Array(SECRET_WORD.length).fill(null);
-    for(const gem of collectedGems){
-        const letter = getGemWord(gem);
-        const idx= SECRET_WORD.indexOf(letter);
-        if(idx!== -1)slots[idx] =letter;
-    }
-    return slots;
-}
 
 function drawWordSlots(){
-    const slots=getWordSlots();
     const slotSize=36;
     const gap =8;
     const totalWidth=slots.length * slotSize +(slots.length-1)*gap;
@@ -163,7 +153,7 @@ function displayGemsWithWords() {
 function goodending(){
     image(ch6, 0,0,width,height)//
     fill(255);
-    textAlign(LEFT);
+    textAlign(LEFT,TOP);
     textSize(17);
     textFont("Arial");
     text("The gems merge into the Star of Dentiny, restroing the darkness fading star."+
@@ -187,7 +177,7 @@ function goodending(){
 function badending(){
     image(ch6_1, 0,0,width,height)//
     fill(255);
-    textAlign(LEFT);
+    textAlign(LEFT,TOP);
     textSize(17);
     textFont("Arial");
     text("Darkness spreads across the world, extinguishing every remaining star.\n"+
