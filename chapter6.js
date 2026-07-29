@@ -1,6 +1,6 @@
 const SECRET_WORD = "DESTINY";
-function chapter6(){
-    image(ch6, 0,0,width,height)//
+function Chapter6(){
+    image(ch6, 0,0,width,height);//
     fill(255);
     textAlign(LEFT);
     textSize(17);
