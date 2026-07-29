@@ -46,7 +46,7 @@ function drawWordSlots(){
     const gap =8;
     const totalWidth=SECRET_WORD.length * slotSize +(SECRET_WORD.length-1)*gap;
     const startX= width/2 - totalWidth/2;
-    const numRows=Math.max(1, Math.cell(collectedGems.length/GEM_PER_ROW));
+    const numRows=Math.max(1, Math.ceil(collectedGems.length/GEM_PER_ROW));
     const y= GEM_START_Y + numRows * GEM_ROW_SPACING +20;
 
     for(let i =0; i<SECRET_WORD.length; i++){
