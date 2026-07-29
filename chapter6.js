@@ -41,11 +41,11 @@ function getGemWord(gemImage) {
 function drawWordSlots(){
     const slotSize=36;
     const gap =8;
-    const totalWidth=slots.length * slotSize +(slots.length-1)*gap;
+    const totalWidth=SECRET_WORD.length * slotSize +(SECRET_WORD.length-1)*gap;
     const startX= width/2 - totalWidth/2;
     const y=200;
 
-    for(let i =0; i<slots.length; i++){
+    for(let i =0; i<SECRET_WORD.length; i++){
         const x= startX + i *(slotSize +gap);
         stroke(255);
         noFill();
@@ -54,7 +54,7 @@ function drawWordSlots(){
         fill(255);
         textAlign(CENTER,CENTER);
         textSize(22);
-        text(slots[i]? slots[i] : "_", x + slotSize / 2, y + slotSize / 2 + 2);
+        text("_", x + slotSize / 2, y + slotSize / 2 + 2);
     }
 
 }
@@ -76,7 +76,7 @@ function canvasToPageRect(x,y,w,h){
 function hiddenmessage(){
     image(ch6,0,0,width,height)
     fill(255);
-    textAlign(CENTER);
+    textAlign(CENTER,TOP);
     textSize(20);
     textFont("Arial");
     text("Guess the hidden word with the hits provide.\n"+
@@ -120,7 +120,7 @@ function checkHiddenMessage() {
 
 function displayGemsWithWords() {
   fill(255);
-  textAlign(LEFT);
+  textAlign(LEFT,TOP);
   textSize(14);
   text("Your Collected Gems & Words:", 20, 80);
 
@@ -143,7 +143,7 @@ function displayGemsWithWords() {
     let word = getGemWord(collectedGems[i]);
     if (word) {
       fill(255); 
-      textAlign(CENTER);
+      textAlign(CENTER,TOP);
       textSize(12);
       text(`"${word}"`, x+25,y+70);
     }
