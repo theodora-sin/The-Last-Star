@@ -212,7 +212,7 @@ function drawSnakeEndScreen4() {
   textAlign(CENTER, CENTER);
   textSize(22);
   if (gameWon4) {
-    text(`You reached ${TARGET_SCORE4} points!`, 60, height / 2 - 40, width - 60); // was "30" instead of "width / 2" — textAlign(CENTER) needs the box's x to actually be the center for the text to look centered
+    text(`You reached ${TARGET_SCORE4} points!`, 150, height / 2 - 40, width - 60); // was "30" instead of "width / 2" — textAlign(CENTER) needs the box's x to actually be the center for the text to look centered
   } else {
     text("Game Over", width / 2, height / 2 - 60);
     textSize(16);
