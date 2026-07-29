@@ -12,4 +12,5 @@ canvas{
     display:block;
     border:3px solid #ffffff;
     box-sizing:border-box;
+    touch-action:none;
 }
