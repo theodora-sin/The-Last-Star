@@ -216,7 +216,7 @@ function drawSnakeEndScreen4() {
   } else {
     text("Game Over", width / 2, height / 2 - 60);
     textSize(16);
-    text(`Final Score: ${score4}`, 60, height / 2 - 20);
+    text(`Final Score: ${score4}`,  width / 2, height / 2 - 20);
   }
  
   if (!continueButton17) {
