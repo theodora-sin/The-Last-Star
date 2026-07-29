@@ -13,7 +13,7 @@ function endingscreen(){
     30,60,width-60)
     image(charImg1, 15, height-380,110,160);
     image(charImg2, 135, height-380,110,160);
-    image(Darkness, 255, height-500,100,160);
+    image(Darkness, 255, height-380,100,160);
 
     if (!continueButton27) {
         continueButton27 = new Sprite(width / 2, height - 100, 140, 50);
