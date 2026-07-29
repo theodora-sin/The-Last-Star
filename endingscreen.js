@@ -1,7 +1,7 @@
 function endingscreen(){
     image(end,0,0,width,height);
     fill(255);
-    textAlign(LEFT);
+    textAlign(LEFT,TOP);
     textSize(17);
     textFont("Arial");
     text("Each person has it own beginning and ending, no one knows when their final moment will come.\n"+
