@@ -37,13 +37,17 @@ function getGemWord(gemImage) {
   return "";
 }
 
+const GEM_PER_ROW =3;
+const GEM_START_Y=100;
+const GEM_ROW_SPACING=90;
 
 function drawWordSlots(){
     const slotSize=36;
     const gap =8;
     const totalWidth=SECRET_WORD.length * slotSize +(SECRET_WORD.length-1)*gap;
     const startX= width/2 - totalWidth/2;
-    const y=200;
+    const numRows=Math.max(1, Math.cell(collectedGems.length/GEM_PER_ROW));
+    const y= GEM_START_Y + numRows * GEM_ROW_SPACING +20;
 
     for(let i =0; i<SECRET_WORD.length; i++){
         const x= startX + i *(slotSize +gap);
