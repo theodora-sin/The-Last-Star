@@ -209,7 +209,7 @@ function drawEndScreen2(){
     if (gameWon2) {
         textSize(22);
         text("You Win!\n Final Score: "+score2
-        , width / 2, height / 2 - 60);
+        , 100, height / 2 - 60);
     } else {
         textSize(20);
         if(blackHits2>=3){
