@@ -180,7 +180,58 @@ function startMusic(){
     isUserInteracted = true;
   }  
 }
-/*setup runs once*/
+
+function resetGameState(){
+  collectedGems=[];
+  playerCharacter=null;
+  character_name=null;
+ choosebutton1 = null; choosebutton2 = null;
+  IntroButton = null; IntroShown = false;
+  prefaceButton = null; prefaceShown = false;
+  choosebutton3 = null; choosebutton4 = null;
+ 
+  continueButton1 = null; continueButton2 = null;
+  continueButton3 = null; continueButton4 = null;
+  player = null; walls = null; obstacles = null;
+  mazeStarted = false; mazeGameOver = false; mazeWon = false;
+  mazeCollected = 0; showEndZoneHint = false;
+ 
+  choosebutton5 = null; choosebutton6 = null;
+  continueButton5 = null;
+  continueButton6 = null;
+ 
+  continueButton9 = null;
+  choosebutton7 = null; choosebutton8 = null;
+  dialogueIndex = 0;
+  dialogueContinueButton = null;
+ 
+  continueButton10 = null;
+  continueButton11 = null;
+ 
+  continueButton12 = null;
+  choosebutton9 = null; choosebutton10 = null;
+ 
+  continueButton14 = null;
+  continueButton15 = null;
+ 
+  if (typeof SnakeGameStarted !== "undefined") { SnakeGameStarted = false; gameOver4 = false; gameWon4 = false; score4 = 0; }
+  if (typeof GameStarted2 !== "undefined") { GameStarted2 = false; gameOver2 = false; gameWon2 = false; score2 = 0; blackHits2 = 0; }
+ 
+  continueButton21 = null;
+  choosebutton11 = null; choosebutton12 = null;
+  continueButton22 = null;
+  continueButton23 = null;
+ 
+  continueButton24 = null;
+  inputBox = null; submitButton = null;
+  continueButton25 = null;
+  continueButton26 = null;
+ 
+  continueButton27 = null;
+}
+
+
+
 function draw() {
   fitCanvasToWindow();
   startMusic();
