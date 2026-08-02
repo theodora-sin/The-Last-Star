@@ -10,7 +10,7 @@ Inside every person, there is a shiny star shining through their life. As long a
 --Collect gems along the way, each hiding a letter of a secret word
 --At the end, guess the hidden word to determine your true ending. 
 
-##Controls:
+## Controls:
 --Mouse/tap: buttons and story choices
 --Arrow keys or drag the sliding object using touchscreen in maze and catch the gem
 --Arrow keys or touch the inbuilt arrow key button to play the snake
